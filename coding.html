@@ -74,6 +74,7 @@ body {
     width: 8rem;
     height: 5.4rem;
 }
+
 #title,
 #title2,
 #title3,
@@ -108,7 +109,7 @@ body {
 .codingprojects2 ul li a,
 .codingprojects3 ul li a,
 .codingprojects4 ul li a {
-    color: maroon;
+    color: #FCA311;
     text-decoration: none;
     padding: 0.5rem 1.2rem;
 }
@@ -116,9 +117,10 @@ body {
 .codingprojects2 ul li a:hover,
 .codingprojects3 ul li a:hover,
 .codingprojects4 ul li a:hover {
-    color: white;
-    box-shadow: 0 0 0.7rem maroon;
-    background-color: maroon;
+    color: rgb(0, 0, 88);
+    box-shadow: 0 0 0.7rem #FCA311;
+    background-color: #FCA311;
+    border-radius: 1rem;
 }
 
 
@@ -178,44 +180,45 @@ body {
         <h1 id="name">My Coding Projects</h1>
         <p id="info">These are some of my favorite projects that I've created.</p>
 
-        <h2 id="title">HTML, CSS, JavaScript, React, Git, and Command Line</h1>
-        <nav class="codingprojects">
-            <ul>
-                <li><a href="coding_projects/jamming.html">Jamming (Spotify App)</a></li>
-            </ul>
-        </nav>
-
-        <h2 id="title2">HTML, CSS, Python, Django, Git, and Command Line</h2>
-        <nav class="codingprojects2">
-            <ul>
-                <li><a href="coding_projects/djdelights.html">Django Delights</a></li>
-                <li><a href="coding_projects/vetoffice.html">Vet Office</a></li>
-                <li><a href="coding_projects/djdjitney.html">The Django Djitney</a></li>
-            </ul>
-        </nav>
-
-        <h2 id="title3">HTML, CSS, and JavaScript</h2>
-        <nav class="codingprojects3">
-            <ul>
-                <li><a href="coding_projects/calculator.html">Calculator</a></li>
-                <li><a href="coding_projects/stopwatch.html">Stopwatch</a></li>
-                <li><a href="coding_projects/numberguess.html">Number Guesser Game</a></li>
-                <li><a href="coding_projects/get&postrequests_project/project.html">Get and Post Requests Project</a></li>
-                <li><a href="coding_projects/piano.html">Interactive Piano Tutorial</a></li>
-            </ul>
-        </nav>
-        
-        <h2 id="title4">HTML and CSS</h1>
-        <nav class="codingprojects4">
-            <ul>
-                <li><a href="coding_projects/htmlcheatsheet.html">HTML Cheatsheet</a></li>
-                <!-- <li><a href="coding_projects/csscheatsheet.html">CSS Style Guide</a></li> -->
-                <li><a href="coding_projects/excursion.html">Excursion App Advertisement</a></li>
-                <li><a href="coding_projects/fotomatic/fotomatic.html">Fotomatic</a></li>
-                <li><a href="coding_projects/codingclub.html">Coding Club</a></li>
-                <li><a href="coding_projects/teacozy.html">Tea Cozy</a></li>
-            </ul>
-        </nav>
-
+        <section id="section1">
+            <h2 id="title">HTML, CSS, JavaScript, React, Git, and Command Line</h1>
+            <div class="codingprojects">
+                <ul>
+                    <li><a href="coding_projects/jamming.html">Jamming (Spotify App)</a></li>
+                </ul>
+            </div>
+    
+            <h2 id="title2">HTML, CSS, Python, Django, Git, and Command Line</h2>
+            <div class="codingprojects2">
+                <ul>
+                    <li><a href="coding_projects/djdelights.html">Django Delights</a></li>
+                    <li><a href="coding_projects/vetoffice.html">Vet Office</a></li>
+                    <li><a href="coding_projects/djdjitney.html">The Django Djitney</a></li>
+                </ul>
+            </div>
+    
+            <h2 id="title3">HTML, CSS, and JavaScript</h2>
+            <div class="codingprojects3">
+                <ul>
+                    <li><a href="coding_projects/calculator.html">Calculator</a></li>
+                    <li><a href="coding_projects/stopwatch.html">Stopwatch</a></li>
+                    <li><a href="coding_projects/numberguess.html">Number Guesser Game</a></li>
+                    <li><a href="coding_projects/get&postrequests_project/project.html">Get and Post Requests Project</a></li>
+                    <li><a href="coding_projects/piano.html">Interactive Piano Tutorial</a></li>
+                </ul>
+            </div>
+            
+            <h2 id="title4">HTML and CSS</h1>
+            <div class="codingprojects4">
+                <ul>
+                    <li><a href="coding_projects/htmlcheatsheet.html">HTML Cheatsheet</a></li>
+                    <!-- <li><a href="coding_projects/csscheatsheet.html">CSS Style Guide</a></li> -->
+                    <li><a href="coding_projects/excursion.html">Excursion App Advertisement</a></li>
+                    <li><a href="coding_projects/fotomatic/fotomatic.html">Fotomatic</a></li>
+                    <li><a href="coding_projects/codingclub.html">Coding Club</a></li>
+                    <li><a href="coding_projects/teacozy.html">Tea Cozy</a></li>
+                </ul>
+            </div>
+        </section>
     </body>
 </html>
