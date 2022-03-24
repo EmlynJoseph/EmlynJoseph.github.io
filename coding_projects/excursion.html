@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport"content = "width=device-width, initial-scale = 1.0">
+        <title>Excursion App Advertisement | Coding Projects | Emlyn Joseph</title>
+        <link rel="shortcut icon" href="../imgs_vids/Shortcut_iconJPG.JPG">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@600&family=Oswald:wght@300&display=swap" rel="stylesheet">
+
+        <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: whitesmoke;
+    /*
+    background-image: linear-gradient(to right, white, rgb(204, 202, 202), rgb(26, 25, 25));
+    */
+    text-align: center;
+}
+.navbar {
+    background-color: rgb(2, 2, 66);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+.navbar ul {
+    display: flex;
+    list-style: none;
+    margin: 1.55rem 0rem;
+    flex-wrap: wrap;
+}
+.navbar ul li {
+    font-family: Bebas Neue, serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1.2rem;
+    transition: all 0.25s ease-in;
+}
+.navbar ul li a:hover {
+    color: rgb(0, 0, 88);
+    box-shadow: 0 0 0.7rem white;
+    background-color: white;
+}
+
+#name {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    margin-top: 3.125rem;
+    color: black;
+    font-size: 2.5rem;
+}
+#img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8rem;
+    height: 5.4rem;
+}
+
+#main {
+    margin-top: 2rem;
+    text-align: center;
+    background-image: linear-gradient(to bottom, rgb(0, 0, 0), rgb(0, 0, 44))
+}
+
+#main .ad {
+    color: aquamarine;
+    font-size: 1rem;
+}
+
+#main h1 {
+    padding-top: 2rem;
+    font-size: 3rem;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#main h2 {
+    font-size: 2.5rem;
+    padding-top: 1rem;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#main p {
+    font-size: 1.3rem;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-top: 2rem;
+    color: orange;
+}
+
+#video {
+    width: 20rem;
+    height: 40rem;
+    padding-top: 0;
+}
+#placeImg {
+    width: 20rem;
+    height: 30rem;
+}
+
+@media only screen and (min-width: 1600px) {
+    .navbar ul li {
+        font-size: 3rem;
+    }
+    #img {
+        width: 9.2rem;
+        height: 6.9rem;
+    }
+    #name {
+        font-size: 4.3rem;
+    }
+}
+@media only screen and (max-width: 660px) {
+    #img {
+        display: none;
+    }
+}
+@media only screen and (max-width: 480px) {
+    #img {
+        display: none;
+    }
+    .navbar ul {
+        justify-content: center;
+    }
+}
+
+
+        </style>
+    </head>
+    <body>
+        <header class="navbar">
+            <ul class="list">
+                <a href="../index.html"><img id="img" src="../imgs_vids/LogoJPG.JPG"></a>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../youtube.html">YouTube</a></li>
+                <li><a href="../coding.html">Projects</a></li>
+                <li><a href="../tutorials.html">Tutorials</a></li>
+                <li><a href="../skills.html">Skills</a></li>
+            </ul>
+        </header>
+
+        <h1 id="name">Excursion App Advertisement</h1>
+        <div id="main">
+
+            <h1>Discover hidden places in the world around you</h1>
+            <p><a class="ad" href="#">Download Excursion (Coming soon!)</a></p>
+
+            <video autoplay muted loop id="video">
+                <source src="../imgs_vids/excursion.mp4" type="video/mp4">
+            </video>
+        
+            <h2>Your personal travel guide</h2>
+
+            <p>Excursion remembers places you like, and recommends new points of interest around you.</p>
+            <p><img id="placeImg" src="../imgs_vids/place.jpg"></p>
+        
+            <p><img src="../imgs_vids/phone.png"></p>
+
+            <h2>Coming Soon for iPhone and Android</h2>
+            <p><a class="ad" id="foot" href="#">Download Excursion (Coming soon!)</a></p>
+            
+        </div>
+    </body>
+</html>

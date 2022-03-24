@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport"content = "width=device-width, initial-scale = 1.0">
+        <title>Number Guesser | Coding Projects | Emlyn Joseph</title>
+        <link rel="shortcut icon" href="../imgs_vids/Shortcut_iconJPG.JPG">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@600&family=Oswald:wght@300&display=swap" rel="stylesheet">
+
+        <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: whitesmoke;
+    /*
+    background-image: linear-gradient(to right, white, rgb(204, 202, 202), rgb(26, 25, 25));
+    */
+}
+.navbar {
+    background-color: rgb(2, 2, 66);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+.navbar ul {
+    display: flex;
+    list-style: none;
+    margin: 1.55rem 0rem;
+    flex-wrap: wrap;
+}
+.navbar ul li {
+    font-family: Bebas Neue, serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1.2rem;
+    transition: all 0.25s ease-in;
+}
+.navbar ul li a:hover {
+    color: rgb(0, 0, 88);
+    box-shadow: 0 0 0.7rem white;
+    background-color: white;
+}
+
+#name {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    margin-top: 3.125rem;
+    color: black;
+    font-size: 2.5rem;
+}
+#img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8rem;
+    height: 5.4rem;
+}
+
+#info {
+    font-style: italic;
+    font-size: 1.1rem;
+    text-align: center;
+    margin: 1.5rem 0;
+    color: rgb(88, 87, 87);
+}
+.game-container {
+    max-width: 40rem;
+    margin: 0 auto;
+    text-align: center;
+}
+.rounds {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.round-label {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+}
+.guess {
+    min-width: 18.9375rem;
+    height: 20.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.875rem;
+}
+.guessing-area {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-bottom: 3.75rem;
+}
+.guess-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 1.25rem;
+}
+.guess-label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.score-label {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0.3rem auto;
+    color: darkgreen;
+    font-family: monospace, "Courier New", sans-serif;
+}
+.target-guess {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.computer-guess {
+    background-color: rgb(231, 230, 230);  
+}
+#computer-guess {
+    font-size: 3.125rem;
+    font-weight: 700;
+    color: rgb(201, 201, 201);
+}
+.human-guess {
+    border: 0.0625rem solid rgb(153, 153, 153);
+}
+.guess input {
+    height: 5.625rem;
+    width: 5.625rem;
+    font-size: 1.875rem;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 0.4375rem;
+}
+.number-controls {
+    font-size: 0;
+    margin-bottom: 1.4375rem;
+}
+.number-control {
+    border: solid 0.0625rem #4c7ef3;
+    display: inline-block;
+    width: 2.8125rem;
+    height: 2.1875rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #4c7ef3;
+    cursor: pointer;
+}
+.number-controls button[disabled] {
+    color: rgb(230, 224, 224);
+    cursor: default;
+}
+.left {
+    border-top-left-radius: 22.5px;
+    border-bottom-left-radius: 22.5px;
+}
+.right {
+    border-top-right-radius: 22.5px;
+    border-bottom-right-radius: 22.5px;
+    border-left-width: 0px;
+}
+.controls {
+    display: flex;
+    justify-content: space-around;
+}
+.button {
+    background-color: #4c7ef3;
+    color: white;
+    cursor: pointer;
+}
+#guess {
+    padding: 1.26rem;
+    width: 10.5625rem;
+    height: 3.6876rem;
+    border: none;
+    font-weight: 700;
+    font-size: 0.875rem;
+    border-radius: 0.5rem;
+}
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+#next-round {
+    width: 11.1875rem;
+    height: 4rem;
+    font-size: 1.125rem;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3.75rem;
+    border: none;
+    border-radius: 1rem;
+}
+.button[disabled] {
+    background-color: #d2d2d2;
+    color: rgb(165, 165, 165);
+    cursor: default;
+}
+.winning-text, .winning-text[disabled] {
+    color: #ec3636;
+    font-weight: 700;
+}
+
+@media only screen and (min-width: 1600px) {
+    .navbar ul li {
+        font-size: 3rem;
+    }
+    #img {
+        width: 9.2rem;
+        height: 6.9rem;
+    }
+    #name {
+        font-size: 4.3rem;
+    }
+}
+@media only screen and (max-width: 660px) {
+    #img {
+        display: none;
+    }
+}
+@media only screen and (max-width: 480px) {
+    #img {
+        display: none;
+    }
+    .navbar ul {
+        justify-content: center;
+    }
+    .game-container {
+      float: center;
+    }
+    .guessing-area {
+      display: flex;
+      flex-direction: column;
+    }
+    .computer-guess {
+      width: 100%;
+    }
+    .human-guess {
+      width: 100%;
+    }
+}
+
+        </style>
+    </head>
+    <body>
+        <header class="navbar">
+            <ul class="list">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../youtube.html">YouTube</a></li>
+                <li><a href="../coding.html">Projects</a></li>
+                <li><a href="../tutorials.html">Tutorials</a></li>
+                <li><a href="../skills.html">Skills</a></li>
+                <a href="../index.html"><img id="img" src="../imgs_vids/LogoJPG.JPG"></a>
+            </ul>
+        </header>
+
+        <h1 id="name">Number Guesser</h1>
+
+        <h2 id="info">Enter a number between 0 and 10 or use the + and - to enter a number. <br> Then, press the other button to make a guess. <br>If your guess is closer to the target number than the computer's guess, you win! <br>Otherwise, you lost. Click next round to play again.</h2>
+        <div class="game-container">
+            
+            <div class="rounds">
+              <p class="round-label">Round <span id="round-number">1</span></p>
+              <p class="guess-label">Target Number: <span id="target-number">?</span></p>
+            </div>
+      
+            <div class="guessing-area">
+              <div class="guess computer-guess">
+                <div class="guess-title">
+                  <p class="guess-label">Computer</p>
+                  <p class="score-label">Score: <span id="computer-score">0</span></p>
+                </div>
+                <p id="computer-guess">?</p>
+                <p class="winning-text" id="computer-wins"></p>
+              </div>
+              <div class="guess human-guess">
+                <div class="guess-title">
+                  <p class="guess-label">You</p>
+                  <p class="score-label">Score: <span id="human-score">0</span></p>
+                </div>
+                <input type="number" id="human-guess" min=0 max=9 value=0>
+                <div class="number-controls">
+                  <button class="number-control left" id="subtract" disabled>-</button>
+                  <button class="number-control right" id="add">+</button>
+                </div>
+                <button class="button" id="guess">Make a Guess</button>
+              </div>
+            </div>
+      
+            <div class="next-round-container">
+              <button class="button" id="next-round" disabled>Next Round</button>
+            </div>
+      
+          </div>
+
+      
+          <script>
+                let target;
+                let humanGuessInput = document.getElementById('human-guess');
+                let roundNumberDisplay = document.getElementById('round-number');
+                let computerGuessDisplay = document.getElementById('computer-guess');
+                let humanScoreDisplay = document.getElementById('human-score');
+                let computerScoreDisplay = document.getElementById('computer-score');
+                let targetNumberDisplay = document.getElementById('target-number');
+                let computerWinsDisplay = document.getElementById('computer-wins');
+                let guessButton = document.getElementById('guess');
+                let nextRoundButton = document.getElementById('next-round')
+
+                guessButton.addEventListener('click', function() {
+                    // Generate the target value
+                    target = generateTarget();
+                    // Retrieve the player's guess
+                    const currentHumanGuess = humanGuessInput.value;
+                    // Make a random 'computer guess'
+                    const computerGuess = Math.floor(Math.random() * 10);
+
+                    // Display the computer guess and the target
+                    computerGuessDisplay.innerText = computerGuess;
+                    targetNumberDisplay.innerText = target;
+                    
+                    // Determine if the human or computer wins:
+                    const humanIsWinner = compareGuesses(currentHumanGuess, computerGuess, target)
+                    const winner = humanIsWinner ? 'human' : 'computer'
+
+                    // Update the correct score:
+                    updateScore(winner);
+
+                    // Display the winner
+                    if (humanIsWinner) {
+                        guessButton.innerText = 'Congratulations, you win!';
+                        guessButton.classList.toggle('winning-text')
+                    } else {
+                        computerWinsDisplay.innerText = 'The computer wins! Better luck next time!';
+                    }
+
+                    // Display the current scores:
+                    humanScoreDisplay.innerText = humanScore;
+                    computerScoreDisplay.innerText = computerScore;
+                    
+                    // Set the correct disabled state for the buttons
+                    guessButton.setAttribute('disabled', true)
+                    nextRoundButton.removeAttribute('disabled');
+                });
+
+                nextRoundButton.addEventListener('click', function() {
+                    // Increase the round number
+                    advanceRound();
+                    // Display the new round number
+                    roundNumberDisplay.innerText = currentRoundNumber;
+
+                    // Set the correct disabled state for the buttons
+                    nextRoundButton.setAttribute('disabled', true);
+                    guessButton.removeAttribute('disabled');
+
+                    // Reset the guess input box and the target number display:
+                    targetNumberDisplay.innerText = '?';
+                    guessButton.innerText = 'Make a Guess';
+                    humanGuessInput.value = '';
+                    computerGuessDisplay.innerText = '?';
+                    computerWinsDisplay.innerText = '';
+                    guessButton.classList.remove('winning-text');
+                });
+
+                const addButton = document.getElementById('add');
+                const subtractButton = document.getElementById('subtract');
+
+                addButton.addEventListener('click', function() {
+                    humanGuessInput.value = +humanGuessInput.value + 1;
+                    handleValueChange(humanGuessInput.value);
+                });
+                subtractButton.addEventListener('click', function() {
+                    humanGuessInput.value = +humanGuessInput.value - 1;
+                    handleValueChange(humanGuessInput.value);
+                });
+
+                const handleValueChange = value => {
+                if (value > 0 && value <= 9) {
+                    subtractButton.removeAttribute('disabled');
+                    addButton.removeAttribute('disabled');
+                } else if (value > 9) {
+                    addButton.setAttribute('disabled', true);
+                } else if (value <= 0) {
+                    subtractButton.setAttribute('disabled', true);
+                }
+                }
+
+                humanGuessInput.addEventListener('input', function(e) {
+                    handleValueChange(e.target.value);
+                });
+
+                let humanScore = 0;
+                let computerScore = 0;
+                let currentRoundNumber = 1;
+
+                const generateTarget = () => {
+                    return Math.floor(Math.random() * 10)
+                }
+                const compareGuesses = (userGuess, computerGuess, targetNum) => {
+                    let userVal = Math.abs(userGuess - targetNum)
+                    let computerVal = Math.abs(computerGuess - targetNum)
+
+                    if (userVal > computerVal) {
+                        return false;
+                    }  
+                    else if (userVal < computerVal) {
+                        return true;
+                    } else {
+                        return true;
+                    }
+                }
+
+                const updateScore = winner => {
+                    if (winner === 'human') {
+                        humanScore++
+                    } if (winner === "computer") {
+                        computerScore++
+                    } 
+                }
+
+                const advanceRound = () => {
+                    currentRoundNumber++
+                }
+          </script>
+
+        </body>
+    </body>
+</html>

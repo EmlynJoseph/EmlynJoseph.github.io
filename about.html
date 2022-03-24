@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport"content = "width=device-width, initial-scale = 1.0">
+        <title>About | Emlyn Joseph</title>
+        <link rel="shortcut icon" href="imgs_vids/Shortcut_iconJPG.JPG">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@600&family=Oswald:wght@300&display=swap" rel="stylesheet">
+
+        <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: whitesmoke;
+    /*
+    background-image: linear-gradient(to right, white, rgb(204, 202, 202), rgb(26, 25, 25));
+    */
+}
+.navbar {
+    background-color: rgb(2, 2, 66);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+.navbar ul {
+    display: flex;
+    list-style: none;
+    margin: 1.55rem 0rem;
+    flex-wrap: wrap;
+}
+.navbar ul li {
+    font-family: Bebas Neue, serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1.2rem;
+    transition: all 0.25s ease-in;
+}
+.navbar ul li a:hover {
+    color: rgb(0, 0, 88);
+    box-shadow: 0 0 0.7rem white;
+    background-color: white;
+}
+
+#name {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    margin-top: 3.125rem;
+    color: black;
+    font-size: 2.5rem;
+}
+#img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8rem;
+    height: 5.4rem;
+}
+
+main #info {
+    display: flex;
+}
+main #info img {
+    width: 25rem;
+    height: auto;
+    margin: 2rem 0 2rem 5rem;
+    border-radius: 1rem;
+}
+main #info p {
+    text-align: left;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    padding: 2rem;
+}
+main #info p a {
+    color: rgb(2, 2, 199);
+    text-decoration: none;
+}
+main #info p a:hover {
+    text-decoration: underline;
+}
+
+@media only screen and (min-width: 1600px) {
+    .navbar ul li {
+        font-size: 3rem;
+    }
+    #img {
+        width: 9.2rem;
+        height: 6.9rem;
+    }
+    #name {
+        font-size: 4.3rem;
+    }
+    main #info img {
+        width: 35rem;
+        height: 40rem;
+        margin: 3rem 0 2rem 5rem;
+    }
+    main #info p {
+        font-size: 2rem;
+        line-height: 3rem;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    main #info img {
+        width: 25rem;
+        height: 30rem;
+        margin: 1.5rem 0 0 0.2rem;
+    }
+    main #info p {
+        width: 50rem;
+        padding: 1rem;
+    }
+}
+@media only screen and (max-width: 660px) {
+    #img {
+        display: none;
+    }
+    main {
+        max-width: 30rem;
+    }
+    main #info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    main #info img {
+        width: 23rem;
+        height: 30rem;
+    }
+}
+@media only screen and (max-width: 480px) {
+    #img {
+        display: none;
+    }
+    .navbar ul {
+        justify-content: center;
+    }
+    main #info img {
+        width: 98%;
+        height: auto;
+    }
+    main #info p {
+        width: 100%;
+    }
+}
+        </style>
+    </head>
+    <body>
+        <header class="navbar">
+            <ul>
+                <a href="index.html"><img id="img" src="imgs_vids/LogoJPG.JPG"></a>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="youtube.html">YouTube</a></li>
+                <li><a href="coding.html">Projects</a></li>
+                <li><a href="tutorials.html">Tutorials</a></li>
+                <li><a href="skills.html">Skills</a></li>
+            </ul>
+        </header>
+        <main id="about">
+            <h1 id="name">About Me</h1>
+            <div id="info">
+                <img src="imgs_vids/emlyn.jpg" alt="a picture of Emlyn Joseph">
+                <p>Greetings, thanks for visiting my website! My name is Emlyn Joseph and I am a 7th grade student currently living in the Middle East. <!--I love a good challenge whether it's solving a tricky problem, achieving a goal, or even learning something new.--> <br>Running, soccer, and basketball are my three favorite sports and programming, playing the piano, and reading are my favorite hobbies that I practice every day. <br>I've created a <a href="youtube.html">YouTube channel</a> that is gradually growing with over 200 subscribers and 30000 views where I upload songs that I've played on the piano. I've uploaded more than 50 videos!<br>Creating responsive and interactive websites and different projects are really enjoyable when programming and I always learn something new when doing it. I'm pretty fluent in a few programming languages and you can view some of my favorite projects that I've created by clicking the <a href="coding.html">Projects</a> link.
+                </p>
+            </div>
+
+        </main>
+    </body>
+</html>

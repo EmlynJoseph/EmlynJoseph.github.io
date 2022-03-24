@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport"content = "width=device-width, initial-scale = 1.0">
+        <title>Fotomatic | Coding Projects | Emlyn Joseph</title>
+        <link rel="shortcut icon" href="../../imgs_vids/Shortcut_iconJPG.JPG">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@600&family=Oswald:wght@300&display=swap" rel="stylesheet">
+
+        <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: whitesmoke;
+    /*
+    background-image: linear-gradient(to right, white, rgb(204, 202, 202), rgb(26, 25, 25));
+    */
+}
+.navbar {
+    background-color: rgb(2, 2, 66);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+.navbar ul {
+    display: flex;
+    list-style: none;
+    margin: 1.55rem 0rem;
+    flex-wrap: wrap;
+}
+.navbar ul li {
+    font-family: Bebas Neue, serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1.2rem;
+    transition: all 0.25s ease-in;
+}
+.navbar ul li a:hover {
+    color: rgb(0, 0, 88);
+    box-shadow: 0 0 0.7rem white;
+    background-color: white;
+}
+
+#name {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    margin-top: 3.125rem;
+    color: black;
+    font-size: 2.5rem;
+}
+#img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8rem;
+    height: 5.4rem;
+}
+#content {
+    text-align: center;
+    margin: 1rem 2rem;
+}
+#content #link {
+    font-family: Bebas Neue, serif;
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: maroon;
+    text-decoration: none;
+    padding: 0.5rem 1.2rem;
+}
+#content #link:hover {
+    color: white;
+    box-shadow: 0 0 0.7rem maroon;
+    background-color: maroon;
+}
+#content p {
+    font-style: italic;
+    font-size: 1.1rem;
+    margin: 1rem 0;
+    color: rgb(88, 87, 87);
+    text-align: left;
+}
+#content p a {
+    color: rgb(2, 2, 199);
+}
+
+@media only screen and (min-width: 1600px) {
+    .navbar ul li {
+        font-size: 3rem;
+    }
+    #img {
+        width: 9.2rem;
+        height: 6.9rem;
+    }
+    #name {
+        font-size: 4.3rem;
+    }
+}
+@media only screen and (max-width: 660px) {
+    #img {
+        display: none;
+    }
+}
+@media only screen and (max-width: 480px) {
+    #img {
+        display: none;
+    }
+    .navbar ul {
+        justify-content: center;
+    }
+}
+
+        </style>
+    </head>
+    <body>
+        <header class="navbar">
+            <ul class="list">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../youtube.html">YouTube</a></li>
+                <li><a href="../../coding.html">Projects</a></li>
+                <li><a href="../../tutorials.html">Tutorials</a></li>
+                <li><a href="../../skills.html">Skills</a></li>
+                <a href="../../index.html"><img id="img" src="../../imgs_vids/LogoJPG.JPG"></a>
+            </ul>
+        </header>
+
+    <h1 id="name">Fotomatic</h1>
+        <div id="content">
+            <a id="link" target="_blank" href="fotomatic-code.html">Website</a></h2>
+            <p>I completed this project in my local environment, but this project was from Codecademy. Codecademy gave me the broken and incomplete code and a <a target="_blank" href="https://content.codecademy.com/courses/freelance-1/capstone-1/specs/fotomatic_spec_landing.png">design spec</a> to follow and I had to finish it by using the design spec to make it responsive and look almost exactly the same. Click the link above to view my website and you can also compare it to the <a target="_blank" href="https://content.codecademy.com/courses/freelance-1/capstone-1/specs/fotomatic_spec_landing.png">design spec.</a></p>
+        </div>
+    </body>
+</html>

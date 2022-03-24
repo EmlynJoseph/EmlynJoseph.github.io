@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport"content = "width=device-width, initial-scale = 1.0">
+        <title>Coding Club | Coding Projects | Emlyn Joseph</title>
+        <link rel="shortcut icon" href="../imgs_vids/Shortcut_iconJPG.JPG">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@600&family=Oswald:wght@300&display=swap" rel="stylesheet">
+
+        <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navbar {
+    background-color: black;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+}
+.navbar ul {
+    display: flex;
+    list-style: none;
+    margin: 1.55rem 0rem;
+    flex-wrap: wrap;
+}
+.navbar ul li {
+    font-family: Bebas Neue, serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1.2rem;
+    transition: all 0.25s ease-in;
+}
+.navbar ul li a:hover {
+    color: black;
+    box-shadow: 0 0 0.7rem white;
+    background-color: white;
+}
+
+.heading {
+    background-image: url("https://www.zdnet.com/a/img/resize/8ac0b62cfee25efbf4b4baa365a98bdec5e0cd59/2021/07/19/8a337c80-5ed6-43a1-98fb-b981d420890f/programming-languages-shutterstock-1680857539.jpg?width=1200&height=1200&fit=crop&auto=webp");
+    line-height: 10rem;
+}
+.heading h1 {
+    font-family: 'Courier New', Courier, monospace, sans-serif;
+    text-align: center;
+    color: white;
+    font-size: 3.5rem;
+}
+.heading p,
+#info #q1 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    background-color: rgb(1, 1, 36);
+    line-height: 3rem;
+    padding: 1rem;
+    font-weight: 900;
+    font-size: 2.2rem;
+    text-align: center;
+}
+.heading img {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    border-radius: 1rem;
+    width: 25rem;
+    height: auto;
+}
+#info #answers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-family: monospace, "Courier New", Courier, sans-serif;
+}
+#info #answers .answer h3 {
+    font-size: 2.5rem;
+    text-align: center;
+}
+#info #answers .answer {
+    width: 35%;
+    margin: 3rem 0;
+    text-align: center;
+}
+button {
+    border: none;
+    background-color: rgb(0, 0, 88);
+    color: white;
+    font-family: Impact, cursive, serif, Arial, sans-serif;
+    font-weight: 300;
+    font-size: 2rem;
+    padding: 2.1rem;
+    margin: 0 auto;
+    display: block;
+}
+button:hover {
+    background-color: rgb(4, 4, 124);
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 1600px) {
+    .navbar ul li {
+        font-size: 3rem;
+    }
+    #img {
+        width: 9.2rem;
+        height: 6.9rem;
+    }
+    #name {
+        font-size: 4.3rem;
+    }
+    #info #answers .answer p {
+        font-size: 1.5rem;
+        font-weight: 200;
+    }
+}
+@media only screen and (max-width: 660px) {
+    #img {
+        display: none;
+    }
+}
+@media only screen and (max-width: 480px) {
+    .navbar ul {
+        justify-content: center;
+    }
+    .heading img {
+        width: 100%;
+        height: auto;
+    }
+    #info #answers {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        max-width: 480px;
+        justify-content: center;
+        align-items: center;
+    }
+}
+        </style>
+    </head>
+    <body>
+        <div class="project-container">
+            <header class="navbar">
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Members</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </header>
+
+            <div class="heading">
+                <h1>Emlyn's Coding Club</h1>
+                <p>A great place to learn and write code and to work with others!</p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC9AW5uviYzOKLKHY5vrmJ3rIf5oa15f7Jig&usqp=CAU">
+            </div>
+
+            <section id="info">
+                <h2 id="q1">Why join our club?</h2>
+
+                <div id="answers">
+                    <div class="answer">
+                        <h3>Learn to Code!</h3>
+                        <p>Learn a wide variety of programming languages step by step with challenges to complete along the way!</p>
+                    </div>
+                    <div class="answer">
+                        <h3>Work With Others!</h3>
+                        <p>Work together and get feedback from others around the world! Ask and answer questions!</p>
+                    </div>
+                    <div class="answer">
+                        <h3>Tutorials!</h3>
+                        <p>In depth tutorials along the way to help you deeply understand each concept.</p>
+                    </div>
+                    <div class="answer">
+                        <h3>Build Projects!</h3>
+                        <p>Test your coding skills by building cool projects that you can share with the world!</p>
+                    </div>
+                </div>
+
+                <button type="button">Join now!</button>
+            </section>
+        </div>
+    </body>
+</html>
+
+
+
+

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport"content = "width=device-width, initial-scale = 1.0">
+        <title>HTML Cheatsheet | Coding Projects | Emlyn Joseph</title>
+        <link rel="shortcut icon" href="../imgs_vids/Shortcut_iconJPG.JPG">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@600&family=Oswald:wght@300&display=swap" rel="stylesheet">
+
+        <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+  background-color: whitesmoke;
+  /*
+    background-image: linear-gradient(to right, white, rgb(204, 202, 202), rgb(26, 25, 25));
+  */
+}
+.navbar {
+    background-color: rgb(2, 2, 66);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+.navbar ul {
+    display: flex;
+    list-style: none;
+    margin: 1.55rem 0rem;
+    flex-wrap: wrap;
+}
+.navbar ul li {
+    font-family: Bebas Neue, serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1.2rem;
+    transition: all 0.25s ease-in;
+}
+.navbar ul li a:hover {
+    color: rgb(0, 0, 88);
+    box-shadow: 0 0 0.7rem white;
+    background-color: white;
+}
+
+#name {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    margin-top: 3.125rem;
+    color: black;
+    font-size: 2.5rem;
+}
+#img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8rem;
+    height: 5.4rem;
+}
+
+#heading {
+    color: black;
+    text-align: center;
+    font-size: 1.9rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+table {
+    border: 2px solid black;
+    width: 45rem;
+    margin: 0 auto;
+}
+
+thead {
+    background-color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.2rem;
+}
+
+td {
+    border-top: 3px solid black;
+    border-left: 1.5px solid black;
+    border-right: 1.5px solid black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 0.2rem;
+    font-size: 1rem;
+}
+.code {
+    font-family: monospace !important;
+    background-color: beige;
+}
+
+@media only screen and (min-width: 1600px) {
+    .navbar ul li {
+        font-size: 3rem;
+    }
+    #img {
+        width: 9.2rem;
+        height: 6.9rem;
+    }
+    #name {
+        font-size: 4.3rem;
+    }
+}
+@media only screen and (max-width: 718px) {
+  table {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 660px) {
+    #img {
+        display: none;
+    }
+}
+@media only screen and (max-width: 480px) {
+    #img {
+        display: none;
+    }
+    .navbar ul {
+        justify-content: center;
+    }
+    table {
+      width: 100%;
+    }
+}
+
+        </style>
+    </head>
+    <body>
+        <header class="navbar">
+            <ul class="list">
+              <a href="../index.html"><img id="img" src="../imgs_vids/LogoJPG.JPG"></a>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../about.html">About</a></li>
+              <li><a href="../youtube.html">YouTube</a></li>
+              <li><a href="../coding.html">Projects</a></li>
+              <li><a href="../tutorials.html">Tutorials</a></li>
+              <li><a href="../skills.html">Skills</a></li>
+            </ul>
+        </header>
+
+        <h1 id="name">HTML Cheatsheet</h1>
+
+        <h2 id="heading">Common HTML Tags</h2>
+        <table>
+          <thead>
+            <th>Tag</th>
+            <th>Name</th>
+            <th>Description</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="code">&lt;!--</span></td>
+              <td>Comment</td>
+              <td>Defines a comment.</td>
+            </tr>
+            <tr>
+              <td><span class="code">&lt;DOCTYPE html&gt;</span></td>
+              <td>Document Type</td>
+              <td>The first line of a HTML document that defines the document type.</td>
+            </tr>
+            <tr>
+              <td><span class="code">&lt;html&gt;</span></td>
+              <td>Html</td>
+              <td>Defines an HTML document and contains all the content.</td>
+            </tr>
+            <tr>
+              <td><span class="code">&lt;head&gt;</span></td>
+              <td>Head</td>
+              <td>Defines the head portion and contains the metadata.</td>
+            </tr>
+            <tr>
+              <td><span class="code">&lt;meta&gt;</span></td>
+              <td>Meta</td>
+              <td>Defines the metadata.</td>
+            </tr>
+            <tr>
+              <td><span class="code">&lt;title&gt;</span></td>
+              <td>Title</td>
+              <td>Defines the title which is shown on the page's tab.</td>
+            </tr>
+            <tr>
+              <td><span class="code">&lt;body&gt;</span></td>
+              <td>Body</td>
+              <td>Contains the content that is displayed in the browser.</td>
+            </tr>
+            <tr>
+              <td><span class="code">&lt;link&gt;</span></td>
+              <td>Link</td>
+              <td>Defines a link to an external document and the path of the url can be added using the "href" attribute.</td>
+            </tr>
+            <tr>
+              <td><span class="code">&lt;a&gt;</span></td>
+              <td>Anchor</td>
+              <td>Defines a hyperlink with a url that can be added using the "href" attribute.</td>
+            </tr>
+            <tr>
+              <td><span class="code">&lt;h1&gt;</span></td>
+              <td>Heading 1</td>
+              <td>Defines a 1st level heading that contains the most important or main information.</td>
+            </tr>
+            <tr>
+              <td><span class="code">&lt;h2&gt;</span></td>
+              <td>Heading 2</td>
+              <td>Defines a 2nd level heading that contains the second most important information.</td>
+            </tr>
+            <tr>
+              <td><span class="code">&lt;h3&gt;</span></td>
+              <td>Heading 3</td>
+              <td>Defines a 3rd level heading that contains the third most important information.</td>
+            </tr>
+            <tr>
+              <td><span class="code">&lt;h4&gt;</span></td>
+              <td>Heading 4</td>
+              <td>Defines a 4th level heading that contains the fourth most important information.</td>
+            </tr>
+            <tr>
+              <td><span class="code">&lt;h5&gt;</span></td>
+              <td>Heading 5</td>
+              <td>Defines a 5th level heading that contains the fifth most important information.</td>
+            </tr>
+            <tr>
+              <td><span class="code">&lt;h6&gt;</span></td>
+              <td>Heading 6</td>
+              <td>Defines a 6th level heading that contains the least important information.</td>
+            </tr>
+            <tr>
+              <td><span class="code">&lt;p&gt;</span></td>
+              <td>Paragraph</td>
+              <td>Defines a paragraph.</td>
+            </tr>
+            <tr>
+              <td><span class="code">&lt;br&gt;</span></td>
+              <td>Line break</td>
+              <td>Adds a line break.</td>
+            </tr>
+            <tr>
+              <td><span class="code">&lt;ul&gt;</span></td>
+              <td>Unordered List</td>
+              <td>Defines an unordered list.</td>
+            </tr>
+            <tr>
+              <td><span class="code">&lt;ol&gt;</span></td>
+              <td>Ordered List</td>
+              <td>Defines an ordered list.</td>
+            </tr>
+            <tr>
+              <td><span class="code">&lt;li&gt;</span></td>
+              <td>List item</td>
+              <td>Defines a list item inside a &lt;ul&gt; or &lt;ol&gt; that defaults to bullet points for an unordered list and numbers for an ordered list.</td>
+            </tr>
+            
+            <tr>
+              <td><span class="code">&lt;em&gt;</span></td>
+              <td>Emphasis</td>
+              <td>Emphasizes text in italics, similar to the &lt;i&gt; tag.</td>
+            </tr>
+            <tr>
+              <td><span class="code">&lt;i&gt;</span></td>
+              <td>Italic</td>
+              <td>Defines text in italics.</td>
+            </tr>
+            <tr>
+              <td><span class="code">&lt;strong&gt;</span></td>
+              <td>Strong emphasis</td>
+              <td>Defines text with strong emphasis displayed in bold.</td>
+            </tr>
+            <tr>
+              <td><span class="code">&lt;img&gt;</span></td>
+              <td>Image</td>
+              <td>Defines text with strong emphasis displayed in bold.</td>
+            </tr>
+            <tr>
+              <td><span class="code">&lt;video&gt;</span></td>
+              <td>Video</td>
+              <td>Defines text with strong emphasis displayed in bold.</td>
+            </tr>
+            <tr>
+              <td><span class="code">&lt;button&gt;</span></td>
+              <td>Button</td>
+              <td>Creates a clickable button.</td>
+            </tr>
+            <tr>
+              <td><span class="code">&lt;form&gt;</span></td>
+              <td>Form</td>
+              <td>Creates a form for the user.</td>
+            </tr>
+            <tr>
+              <td><span class="code">&lt;input&gt;</span></td>
+              <td>Input</td>
+              <td>Creates a field for user input, usually inside a form.</td>
+            </tr>
+            <tr>
+            <tr>
+              <td><span class="code">&lt;table&gt;</span></td>
+              <td>Table</td>
+              <td>The wrapper element for all HTML tables.</td>
+            </tr>
+            <tr>
+              <td><span class="code">&lt;thead&gt;</span></td>
+              <td>Table Head</td>
+              <td>The set of rows defining the column headers in a table.</td>
+            </tr>
+            <tr>
+              <td><span class="code">&lt;th&gt;</span></td>
+              <td>Table Header</td>
+              <td>Creates a header cell at the top of a table.</td>
+            </tr>
+            <tr>
+              <td><span class="code">&lt;tbody&gt;</span></td>
+              <td>Table Body</td>
+              <td>The set of rows containing actual table data.</td>
+            </tr>
+            <tr>
+              <td><span class="code">&lt;tr&gt;</span></td>
+              <td>Table Row</td>
+              <td>The table row container.</td>
+            </tr>
+            <tr>
+              <td><span class="code">&lt;td&gt;</span></td>
+              <td>Table Data</td>
+              <td>The table data container.</td>
+            </tr>
+            <tr>
+              <td><span class="code">&lt;tfoot&gt;</span></td>
+              <td>Table Foot</td>
+              <td>The set of rows defining the footer in a table.</td>
+            </tr>
+          </tbody>
+        </table>
+    </body>
+</html>
+

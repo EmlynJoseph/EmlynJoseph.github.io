@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport"content = "width=device-width, initial-scale = 1.0">
+        <title>Stopwatch | Coding Projects | Emlyn Joseph</title>
+        <link rel="shortcut icon" href="../imgs_vids/Shortcut_iconJPG.JPG">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@600&family=Oswald:wght@300&display=swap" rel="stylesheet">
+
+        <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+body {
+    background-color: whitesmoke;
+    /*
+    background-image: linear-gradient(to right, white, rgb(204, 202, 202), rgb(26, 25, 25));
+    */
+}
+.navbar {
+    background-color: rgb(2, 2, 66);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+.navbar ul {
+    display: flex;
+    list-style: none;
+    margin: 1.55rem 0rem;
+    flex-wrap: wrap;
+}
+.navbar ul li {
+    font-family: Bebas Neue, serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1.2rem;
+    transition: all 0.25s ease-in;
+}
+.navbar ul li a:hover {
+    color: rgb(0, 0, 88);
+    box-shadow: 0 0 0.7rem white;
+    background-color: white;
+}
+#img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8rem;
+    height: 5.4rem;
+}
+#name {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    margin-top: 50px;
+    color: black;
+    font-size: 40px;
+}
+
+.labels {
+    margin-top: 3rem;
+    color: white;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.labels p {
+    background-color: #424d69;
+    padding: 2rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    font-weight: bold;
+    font-family: monospace, serif;
+    font-size: 3.5rem;
+    border-bottom: 0.6rem solid black;
+    flex-wrap: wrap;
+}
+#hr {
+    margin-right: -4rem;
+}
+
+#sec {
+    margin-left: -4rem;
+}
+
+.buttonS {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+}
+.buttonS ul {
+    display: flex;
+    list-style: none;
+    background-color: lightsteelblue;
+    padding: 2rem;
+}
+.buttonS ul li {
+    padding: 0.5rem;
+}
+
+#start {
+    font-weight: bold;
+    color: black;
+    background-color: rgb(25, 192, 25);
+    padding: 1.5rem;
+    line-height: 0;
+    text-transform: uppercase;
+    border: none;
+    font-size: 1.5rem;
+    font-family: monospace, serif;
+}
+#stop {
+    font-weight: bold;
+    color: black;
+    background-color: orange;
+    padding: 1.5rem;
+    line-height: 0;
+    text-transform: uppercase;
+    border: none;
+    font-size: 1.5rem;
+    font-family: monospace, serif;
+
+}
+#reset {
+    font-weight: bold;
+    color: black;
+    background-color: red;
+    padding: 1.5rem;
+    line-height: 0;
+    text-transform: uppercase;
+    border: none;
+    font-size: 1.5rem;
+    font-family: monospace, serif;
+}
+
+#start:hover {
+    cursor: pointer;
+    background-color: green; 
+}
+#stop:hover {
+    cursor: pointer;
+    background-color: rgb(148, 102, 17);
+}
+#reset:hover {
+    cursor: pointer;
+    background-color: rgb(148, 2, 2);
+}
+
+#start:focus {
+    background-color: black;
+    color: green;
+}
+#stop:focus {
+    background-color: rgb(148, 102, 17);
+    cursor: default;
+    
+}
+#reset:focus {
+    background-color: rgb(148, 2, 2);
+    cursor: default;
+}
+
+@media only screen and (min-width: 1600px) {
+    .navbar ul li {
+        font-size: 3rem;
+    }
+    #img {
+        width: 9.2rem;
+        height: 6.9rem;
+    }
+    #name {
+        font-size: 4.3rem;
+    }
+    .labels p {
+        padding: 4rem 6rem;
+        font-size: 5.5rem;
+    }
+    .buttonS ul li {
+        padding: 2.5rem 1.3rem;
+    }
+    #start {
+        padding: 2.5rem;
+        font-size: 2.5rem;
+    }
+    #stop {
+        padding: 2.5rem;
+        font-size: 2.5rem;
+    }
+    #reset {
+        padding: 2.5rem;
+        font-size: 2.5rem;
+    }
+}
+@media only screen and (max-width: 660px) {
+    #img {
+        display: none;
+    }
+}
+@media only screen and (max-width: 480px) {
+    #img {
+        display: none;
+    }
+    .navbar ul {
+        justify-content: center;
+    }
+    .labels p {
+        padding: 2rem 4rem;
+        font-size: 1.5rem;
+    }
+    .buttonS ul {
+        padding: 2rem 2.1rem;
+    }
+    #start {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+    #stop {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+    #reset {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+}
+        </style>
+    </head>
+
+    <body>
+        <header class="navbar">
+            <ul>
+                <a href="../index.html"><img id="img" src="../imgs_vids/LogoJPG.JPG"></a>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../youtube.html">YouTube</a></li>
+                <li><a href="../coding.html">Projects</a></li>
+                <li><a href="../tutorials.html">Tutorials</a></li>
+                <li><a href="../skills.html">Skills</a></li>
+            </ul>
+        </header>
+
+        <h1 id="name">Stopwatch</h1>
+
+        <div class="labels">
+            <p id="hr">00</p>
+            <p id="min">00</p>
+            <p id="sec">00</p>
+        </div>
+
+        <div class="buttonS"> 
+            <ul>
+                <li><button onclick="start()" id="start">Start</button></li>
+                <li><button onclick="stop()" id="stop">Stop</button></li>
+                <li><button onclick="reset()" id="reset">Reset</button></li>
+            </ul>           
+                
+        </div>
+
+        <script>
+            let hr = 0;
+            let min = 0;
+            let sec = 0;
+            let x;
+
+            const startTimer = () => {
+                if (sec < 59) {
+                    sec += 1;
+                    document.getElementById('sec').innerHTML = print(sec);
+                } else {
+                    sec = 0;
+                    min += 1;
+                    document.getElementById('sec').innerHTML = print(sec);
+                }
+                if (min <= 59){
+                    document.getElementById('min').innerHTML = print(min);
+                } else {
+                    min = 0;
+                    hr += 1;
+                    document.getElementById('min').innerHTML = print(min);
+                }
+                if (hr < 24) {
+                    document.getElementById('hr').innerHTML = print(hr);
+                } else {
+                    stop();
+                }
+            }
+
+            const print = val => {
+                if(val <= 9){
+                    return '0' + val;
+                }else{
+                    return val
+                }
+            }
+
+            const start = () => {
+                x = setInterval(startTimer, 1000);
+                document.getElementById('start').disabled = true;
+            }
+            const stop = () => {
+                clearInterval(x);
+                document.getElementById('start').disabled = false;
+
+            }
+            const reset = () => {
+                clearInterval(x);
+                min = 0;
+                sec = 0;
+                hr = 0;
+                document.getElementById('sec').innerHTML = '00';
+                document.getElementById('min').innerHTML = '00';
+                document.getElementById('hr').innerHTML = '00';
+            }
+        </script>          
+    </body>
+</html>
+
