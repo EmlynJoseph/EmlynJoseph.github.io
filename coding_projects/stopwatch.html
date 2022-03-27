@@ -272,7 +272,6 @@ body {
             let hr = 0;
             let min = 0;
             let sec = 0;
-            let x;
 
             const startTimer = () => {
                 if (sec < 59) {
@@ -283,7 +282,7 @@ body {
                     min += 1;
                     document.getElementById('sec').innerHTML = print(sec);
                 }
-                if (min <= 59){
+                if (min <= 59) {
                     document.getElementById('min').innerHTML = print(min);
                 } else {
                     min = 0;
@@ -298,9 +297,9 @@ body {
             }
 
             const print = val => {
-                if(val <= 9){
+                if (val <= 9) {
                     return '0' + val;
-                }else{
+                } else {
                     return val
                 }
             }
@@ -312,7 +311,6 @@ body {
             const stop = () => {
                 clearInterval(x);
                 document.getElementById('start').disabled = false;
-
             }
             const reset = () => {
                 clearInterval(x);
