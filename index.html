@@ -62,12 +62,30 @@ header {
     font-size: 1.8rem;
     margin-top: 1rem;
 }
+
+/*Code was from https://thoughtbot.com/blog/css-animation-for-beginners*/
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 #name {
     font-weight: 100;
     margin: 2.125rem 0;
     color: white;
     font-size: 4rem;
+    animation: bounceIn 2s;
 }
+
 #typing {
     color: white;
     background-image: linear-gradient(to right, #FCA311, orangered, rgb(129, 2, 2));
