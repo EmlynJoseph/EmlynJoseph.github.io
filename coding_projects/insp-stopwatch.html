@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport"content = "width=device-width, initial-scale = 1.0">
+        <title>Inspirational Stopwatch | Coding Projects | Emlyn Joseph</title>
+        <link rel="shortcut icon" href="../imgs_vids/Shortcut_iconJPG.JPG">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@600&family=Oswald:wght@300&display=swap" rel="stylesheet">
+
+        <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: whitesmoke;
+    /*
+    background-image: linear-gradient(to right, white, rgb(204, 202, 202), rgb(26, 25, 25));
+    */
+}
+.navbar {
+    background-color: rgb(2, 2, 66);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+.navbar ul {
+    display: flex;
+    list-style: none;
+    margin: 1.55rem 0rem;
+    flex-wrap: wrap;
+}
+.navbar ul li {
+    font-family: Bebas Neue, serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1.2rem;
+    transition: all 0.5s ease-in;
+}
+.navbar ul li a:hover {
+    color: rgb(0, 0, 88);
+    box-shadow: 0 0 0.7rem white;
+    background-color: white;
+}
+
+#name {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    margin-top: 3.125rem;
+    color: black;
+    font-size: 2.5rem;
+}
+#img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8rem;
+    height: 5.4rem;
+}
+
+
+#content {
+    text-align: center;
+    margin: 1rem 2rem;
+}
+#content #link {
+    font-family: Bebas Neue, serif;
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #FCA311;
+    text-decoration: none; 
+    padding: 0.5rem 1.2rem;
+    transition: all 0.15s ease-in;
+}
+#content #link:hover {
+    color: rgb(0, 0, 88);
+    box-shadow: 0 0 0.7rem #FCA311;
+    background-color: #FCA311;
+    border-radius: 1rem;
+}
+#content p {
+    font-style: italic;
+    font-size: 1.1rem;
+    margin: 1rem 0;
+    color: rgb(88, 87, 87);
+    text-align: left;
+}
+
+#content p a {
+    color: rgb(2, 2, 199);
+}
+
+@media only screen and (min-width: 1600px) {
+    .navbar ul li {
+        font-size: 3rem;
+    }
+    #img {
+        width: 9.2rem;
+        height: 6.9rem;
+    }
+    #name {
+        font-size: 4.3rem;
+    }
+}
+@media only screen and (max-width: 660px) {
+    #img {
+        display: none;
+    }
+}
+@media only screen and (max-width: 480px) {
+    #img {
+        display: none;
+    }
+    .navbar ul {
+        justify-content: center;
+    }
+}
+
+        </style>
+    </head>
+    <body>
+        <header class="navbar">
+            <ul class="list">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../youtube.html">YouTube</a></li>
+                <li><a href="../coding.html">Projects</a></li>
+                <li><a href="../skills.html">Skills</a></li>
+                <a href="../index.html"><img id="img" src="../imgs_vids/LogoJPG.JPG"></a>
+            </ul>
+        </header>
+
+        <h1 id="name">Inspirational Stopwatch</h1>
+        <div id="content">
+            <a id="link" target="_blank" href="https://emlyn-reactredux-app-inspirational-stopwatch.netlify.app/">Web App</a>
+            <p>This is the portfolio project at the end of the Create an Advanced Web App with React and Redux Skill Path in Codecademy. This project uses React and Redux...<br>This project also uses a few API's, <a target="_blank" href="https://unsplash.com/developers">Unsplash API</a>, <a target="_blank" href="https://openweathermap.org/api">OpenWeatherMap API</a>, and <a target="_blank" href="https://quotes.rest/">They Said So Quotes API</a>. I interacted with these API's by making asynchronous requests with a URI (Uniform Resource Identifier) with specific queries. Then, I handled the recieved data and extracted the data I needed for my app.Throughout the processes when using APIs, I referred to each of the documentations, <a target="_blank" href="https://unsplash.com/documentation#search-photos">Unsplash Documentation</a>, <a target="_blank" href="https://openweathermap.org/current">OpenWeatherMap Documentation</a>, and <a target="_blank" href="https://theysaidso.com/api/#qod">They Said So Quotes Documentation</a>. <br>Before starting the project, I set a timeline for myself with firm boundaries and deadlines so that I can stay on track. I first created the file structure of the entire app, which gives me a general overview of the app. After that, I worked on each feature of the app,  not worrying about styles. As a result, the rendering was scattered across the page. I later configured the Redux store and binded it to the React UI rendering in order to make Redux accessible through the React components. The App componnet was the top level component that rendered each component/feature. Lastly, I worked on the styles. <br>This was a challenging project and <a href="https://stackoverflow.com/">Stack Overflow</a> and the documentations were a great resource throughout the whole project. <br>This web app was deployed through Netlify. Click the link above to view and interact with the app.</p>
+        </div>
+    </body>
+</html>
