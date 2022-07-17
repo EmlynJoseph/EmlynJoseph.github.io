@@ -21,6 +21,9 @@ body {
     background-image: linear-gradient(to right, white, rgb(204, 202, 202), rgb(26, 25, 25));
     */
 }
+hr {
+    margin-top: 2rem;
+}
 .navbar {
     background-color: rgb(2, 2, 66);
     width: 100%;
@@ -76,6 +79,18 @@ body {
     height: 5.4rem;
 }
 
+#min-section1,
+#min-section3,
+#min-section5 {
+    background-image: linear-gradient(to right, black, rgb(0, 0, 30), rgb(0, 0, 88), darkblue);
+    padding: 2rem 8rem 5rem 8rem;
+}
+
+#min-section2,
+#min-section4 {
+    padding: 2rem 8rem 5rem 8rem;
+}
+
 #title,
 #title2,
 #title3,
@@ -88,26 +103,35 @@ body {
     font-weight: bold;
     font-size: 1.9rem;
 }
+#title,
+#title3,
+#title5 {
+    color: white;
+}
+
 .codingprojects ul,
 .codingprojects2 ul,
 .codingprojects3 ul,
 .codingprojects4 ul,
 .codingprojects5 ul {
     display: flex;
+    flex-direction: row;
     list-style: none;
     margin: 1.55rem 0rem;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
 }
+
 .codingprojects ul li,
 .codingprojects2 ul li,
 .codingprojects3 ul li,
 .codingprojects4 ul li,
 .codingprojects5 ul li {
-    font-family: Bebas Neue, "Oxygen", serif;
+    font-family: "Trebuchet MS", "serif";
     font-size: 1.7rem;
     font-weight: bold;
+    padding: 5rem 0;
 }
 .codingprojects ul li a,
 .codingprojects2 ul li a,
@@ -116,8 +140,8 @@ body {
 .codingprojects5 ul li a {
     color: #FCA311;
     text-decoration: none;
-    padding: 0.5rem 1.2rem;
-    transition: all 0.15s ease-in;
+    padding: 4rem 8rem 5rem 8rem;
+    transition: all 0.25s ease-in;
 }
 .codingprojects ul li a:hover,
 .codingprojects2 ul li a:hover,
@@ -129,9 +153,9 @@ body {
     background-color: #FCA311;
     border-radius: 1rem;
 }
-
-#lasthr {
-    margin-bottom: 1.5rem;
+.codingprojects ul li a span {
+    font-size: 0.25rem;
+    text-align: center;
 }
 
 @media only screen and (min-width: 1600px) {
@@ -187,75 +211,78 @@ body {
         </header>
 
         <h1 id="name">My Coding Projects</h1>
-        <p id="info">These are some of my favorite and most interactive projects that I've created using powerful languages and libraries. Click on any one of them.</p>
+        <p id="info">These are some of my favorite and most interactive projects that I've created using powerful languages and libraries. <span style="font-weight: bold; font-style: normal; text-transform: uppercase; font-family: 'Trebuchet MS', 'serif'; text-decoration: underline;">Click on any one of them.</span></p>
 
         <section id="section1">
-            <hr />
+            <section id="min-section1">
+                <h2 id="title">HTML, CSS, JavaScript, React, Redux, Git, and Command Line</h2>
+                <hr />
+                <div class="codingprojects">
+                    <ul>
+                        <li><a href="coding_projects/insp-stopwatch.html">Inspirational Stopwatch</a></li>
+                        <li><a href="coding_projects/flashcards.html">Flashcards</a></li>
+                        <li><a href="coding_projects/memorygame.html">Matching Memory Game</a></li>
+                        <li><a href="coding_projects/expensetracker.html">Expense Tracker</a></li>
+                        <li><a href="coding_projects/onlinestore.html">Online Store</a></li>
+                    </ul>
+                </div>
+            </section>
 
-            <h2 id="title">HTML, CSS, JavaScript, React, Redux, Git, and Command Line</h2>
-            <div class="codingprojects">
-                <ul>
-                    <li><a href="coding_projects/insp-stopwatch.html">Inspirational Stopwatch</a></li>
-                    <li><a href="coding_projects/flashcards.html">Flashcards</a></li>
-                    <li><a href="coding_projects/memorygame.html">Matching Memory Game</a></li>
-                    <li><a href="coding_projects/expensetracker.html">Expense Tracker</a></li> 
-                    <li><a href="coding_projects/onlinestore.html">Online Store</a></li>
-                </ul>
-            </div>
+            <section id="min-section2">
+                <h2 id="title2">HTML, CSS, JavaScript, React, Git, and Command Line</h2>
+                <hr />
+                <div class="codingprojects2">
+                    <ul>
+                        <li><a href="coding_projects/jamming.html">Jamming (Spotify App)</a></li>
+                        <li><a href="coding_projects/appointment.html">Appointment Planner</a></li>
+                        <li><a href="coding_projects/adopt-pet.html">Adopt a Pet</a></li>
+                        <li><a href="coding_projects/passingthoughts.html">Passing Thoughts</a></li>
+                        <li><a href="coding_projects/colorpicker.html">Color Picker</a></li>
+                    </ul>
+                </div>
+            </section>
 
-            <hr />
-
-            <h2 id="title2">HTML, CSS, JavaScript, React, Git, and Command Line</h2>
-            <div class="codingprojects2">
-                <ul>
-                    <li><a href="coding_projects/jamming.html">Jamming (Spotify App)</a></li>
-                    <li><a href="coding_projects/appointment.html">Appointment Planner</a></li>
-                    <li><a href="coding_projects/adopt-pet.html">Adopt a Pet</a></li>
-                    <li><a href="coding_projects/passingthoughts.html">Passing Thoughts</a></li>
-                    <li><a href="coding_projects/colorpicker.html">Color Picker</a></li>
-                </ul>
-            </div>
+            <section id="min-section3">
+                <h2 id="title3">HTML, CSS, Python, Django, Git, and Command Line</h2>
+                <hr />
+                <div class="codingprojects3">
+                    <ul>
+                        <li><a href="coding_projects/djdelights.html">Django Delights</a></li>
+                        <li><a href="coding_projects/djdjitney.html">The Django Djitney</a></li>
+                    </ul>
+                </div>
+            </section>
     
-            <hr />
+            <section id="min-section4">
+                <h2 id="title4">HTML, CSS, and JavaScript</h2>
+                <hr />
+                <div class="codingprojects4">
+                    <ul>
+                        <li><a href="coding_projects/film-finder/project.html">Film Finder</a></li>
+                        <li><a href="coding_projects/calculator.html">Calculator</a></li>
+                        <li><a href="coding_projects/stopwatch.html">Stopwatch</a></li>
+                        <li><a href="coding_projects/numberguess.html">Number Guesser Game</a></li>
+                        <li><a href="coding_projects/piano.html">Interactive Piano Tutorial</a></li>
+                    </ul>
+                </div>
+            </section>
 
-            <h2 id="title3">HTML, CSS, Python, Django, Git, and Command Line</h2>
-            <div class="codingprojects3">
-                <ul>
-                    <li><a href="coding_projects/djdelights.html">Django Delights</a></li>
-                    <li><a href="coding_projects/djdjitney.html">The Django Djitney</a></li>
-                </ul>
-            </div>
-    
-            <hr />
-
-            <h2 id="title4">HTML, CSS, and JavaScript</h2>
-            <div class="codingprojects4">
-                <ul>
-                    <li><a href="coding_projects/film-finder/project.html">Film Finder</a></li>
-                    <li><a href="coding_projects/calculator.html">Calculator</a></li>
-                    <li><a href="coding_projects/stopwatch.html">Stopwatch</a></li>
-                    <li><a href="coding_projects/numberguess.html">Number Guesser Game</a></li>
-                    <li><a href="coding_projects/piano.html">Interactive Piano Tutorial</a></li>
-                </ul>
-            </div>
-            
-            <hr />
-
-            <h2 id="title5">HTML and CSS</h2>
-            <div class="codingprojects5">
-                <ul>
-                    <li><a href="#">Cybersecurity Project</a></li>
-                    <li><a href="#">NLP Project</a></li>
-                    <li><a href="coding_projects/htmlcheatsheet.html">HTML Cheatsheet</a></li>
-                    <!-- <li><a href="coding_projects/csscheatsheet.html">CSS Style Guide</a></li> -->
-                    <li><a href="coding_projects/excursion.html">Excursion App Advertisement</a></li>
-                    <li><a href="coding_projects/fotomatic/fotomatic.html">Fotomatic</a></li>
-                    <li><a href="coding_projects/codingclub.html">Coding Club</a></li>
-                    <li><a href="coding_projects/teacozy.html">Tea Cozy</a></li>
-                </ul>
-            </div>
-
-            <hr id="lasthr"/>
+            <section id="min-section5">
+                <h2 id="title5">HTML and CSS</h2>
+                <hr />
+                <div class="codingprojects5">
+                    <ul>
+                        <li><a href="#">Cybersecurity Project</a></li>
+                        <li><a href="#">NLP Project</a></li>
+                        <li><a href="coding_projects/htmlcheatsheet.html">HTML Cheatsheet</a></li>
+                        <!-- <li><a href="coding_projects/csscheatsheet.html">CSS Style Guide</a></li> -->
+                        <li><a href="coding_projects/excursion.html">Excursion App Advertisement</a></li>
+                        <li><a href="coding_projects/fotomatic/fotomatic.html">Fotomatic</a></li>
+                        <li><a href="coding_projects/codingclub.html">Coding Club</a></li>
+                        <li><a href="coding_projects/teacozy.html">Tea Cozy</a></li>
+                    </ul>
+                </div>
+            </section>
         </section>
     </body>
 </html>
