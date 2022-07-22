@@ -5,10 +5,7 @@
         <meta name="viewport"content = "width=device-width, initial-scale = 1.0">
         <title>Coding Projects | Emlyn Joseph</title>
         <link rel="shortcut icon" href="imgs_vids/Shortcut_iconJPG.JPG">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald&family=Oxygen:wght@700&display=swap" rel="stylesheet">
-    
+
        <style>
 * {
     margin: 0;
@@ -16,16 +13,16 @@
     box-sizing: border-box;
 }
 body {
-    background-color: whitesmoke;
+    background-color: rgb(255, 245, 230);
     /*
     background-image: linear-gradient(to right, white, rgb(204, 202, 202), rgb(26, 25, 25));
     */
 }
 hr {
-    margin-top: 4rem;
+    margin-top: 2rem;
 }
 .navbar {
-    background-color: rgb(2, 2, 66);
+    background-color: black;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -40,9 +37,10 @@ hr {
     flex-wrap: wrap;
 }
 .navbar ul li {
-    font-family: Bebas Neue, serif;
-    font-size: 1.8rem;
-    font-weight: bold;
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: -1.5px;
+    font-size: 1.4rem;
+    font-weight: 100;
 }
 .navbar ul li a {
     color: white;
@@ -51,52 +49,49 @@ hr {
     transition: all 0.5s ease-in;
 }
 .navbar ul li a:hover {
-    color: rgb(0, 0, 88);
+    color: black;
     box-shadow: 0 0 0.7rem white;
     background-color: white;
 }
 
 #name {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 400;
     text-align: center;
     margin-top: 3.125rem;
     color: black;
-    font-size: 2.5rem;
+    font-size: 3.5rem;
 }
 #info {
     text-align: center;
     margin: 1rem 2rem 0 2rem;
-    font-style: italic;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 1.1rem;
-    color: rgb(88, 87, 87);
+    color: rgb(0, 0, 88);
     margin-bottom: 3rem;
 }
 #img {
     position: absolute;
     top: 0;
     left: 0;
-    width: 8rem;
-    height: 5.4rem;
+    width: 7.8rem;
+    height: 5.2rem;
 }
 
 #min-section1,
-#min-section3,
-#min-section5 {
-    background-image: linear-gradient(to right, black, rgb(0, 0, 30), rgb(0, 0, 88), darkblue);
-    padding: 2rem 8rem 5rem 8rem;
+#min-section3 {
+    background-color: rgb(0, 0, 50);
+    padding: 1rem 0 4rem 0;
 }
 
-#min-section2,
-#min-section4 {
-    background-image: linear-gradient(to left, black, gray, lightgray, white);
-    padding: 2rem 8rem 5rem 8rem;
+#min-section2 {
+    background-color: rgb(255, 245, 230);
+    padding: 1rem 0 4rem 0;
 }
 
 #title,
 #title2,
-#title3,
-#title4,
-#title5 {
+#title3 {
     color: black;
     text-align: center;
     margin-top: 4.5rem;
@@ -105,16 +100,13 @@ hr {
     font-size: 1.9rem;
 }
 #title,
-#title3,
-#title5 {
+#title3 {
     color: white;
 }
 
 .codingprojects ul,
 .codingprojects2 ul,
-.codingprojects3 ul,
-.codingprojects4 ul,
-.codingprojects5 ul {
+.codingprojects3 ul {
     display: flex;
     flex-direction: row;
     list-style: none;
@@ -126,41 +118,37 @@ hr {
 
 .codingprojects ul li,
 .codingprojects2 ul li,
-.codingprojects3 ul li,
-.codingprojects4 ul li,
-.codingprojects5 ul li {
-    font-family: "Trebuchet MS", "serif";
-    font-size: 1.7rem;
+.codingprojects3 ul li {
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.1rem;
     font-weight: bold;
-    padding: 5rem 0;
+    padding: 3rem 0;
 }
 .codingprojects ul li a,
 .codingprojects2 ul li a,
-.codingprojects3 ul li a,
-.codingprojects4 ul li a,
-.codingprojects5 ul li a {
-    color: #FCA311;
+.codingprojects3 ul li a {
+    color: rgb(255, 245, 230);
     text-decoration: none;
-    padding: 4rem 8rem 5rem 8rem;
+    padding: 1.5rem 3.5rem 2rem 3.5rem;
     transition: all 0.25s ease-in;
+    margin: 1rem;
+    border: 0.2rem solid rgb(255, 245, 230);
+    border-radius: 1rem;
 }
-.codingprojects2 ul li a,
-.codingprojects4 ul li a {
+.codingprojects2 ul li a {
     color: rgb(0, 0, 88);
+    border: 0.2rem solid rgb(0, 0, 88);
 }
 .codingprojects ul li a:hover,
 .codingprojects2 ul li a:hover,
-.codingprojects3 ul li a:hover,
-.codingprojects4 ul li a:hover,
-.codingprojects5 ul li a:hover {
+.codingprojects3 ul li a:hover {
     color: rgb(0, 0, 88);
-    box-shadow: 0 0 0.7rem #FCA311;
-    background-color: #FCA311;
+    box-shadow: 0 0 0.7rem rgb(255, 245, 230);
+    background-color: rgb(255, 245, 230);
     border-radius: 1rem;
 }
-.codingprojects2 ul li a:hover,
-.codingprojects4 ul li a:hover {
-    color: #FCA311;
+.codingprojects2 ul li a:hover {
+    color: rgb(255, 245, 230);
     box-shadow: 0 0 0.7rem rgb(0, 0, 88);
     background-color: rgb(0, 0, 88);
 }
@@ -222,11 +210,11 @@ hr {
         </header>
 
         <h1 id="name">Coding Projects</h1>
-        <p id="info">These are some of my favorite and most interactive projects that I've created using powerful languages and libraries. <span style="font-weight: bold; font-style: normal; text-transform: uppercase; font-family: 'Trebuchet MS', 'serif'; text-decoration: underline;">Click on any one of them.</span></p>
+        <p id="info">These are some of my favorite and most interactive projects that I've created using powerful languages and libraries. <br><span style="font-weight: bold; font-style: italic; font-family: 'Trebuchet MS', 'serif'; text-decoration: underline;">Keep scrolling down and you can click on any one of them.</span></p>
 
         <section id="section1">
             <section id="min-section1">
-                <h2 id="title">HTML, CSS, JavaScript, React, Redux, Git, and Command Line</h2>
+                <h2 id="title">HTML, CSS, JavaScript, React and/or Redux, Git, and Command Line</h2>
                 <hr />
                 <div class="codingprojects">
                     <ul>
@@ -235,15 +223,6 @@ hr {
                         <li><a href="coding_projects/memorygame.html">Matching Memory Game</a></li>
                         <li><a href="coding_projects/expensetracker.html">Expense Tracker</a></li>
                         <li><a href="coding_projects/onlinestore.html">Online Store</a></li>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="min-section2">
-                <h2 id="title2">HTML, CSS, JavaScript, React, Git, and Command Line</h2>
-                <hr />
-                <div class="codingprojects2">
-                    <ul>
                         <li><a href="coding_projects/jamming.html">Jamming (Spotify App)</a></li>
                         <li><a href="coding_projects/appointment.html">Appointment Planner</a></li>
                         <li><a href="coding_projects/adopt-pet.html">Adopt a Pet</a></li>
@@ -253,10 +232,10 @@ hr {
                 </div>
             </section>
 
-            <section id="min-section3">
-                <h2 id="title3">HTML, CSS, Python, Django, Git, and Command Line</h2>
+            <section id="min-section2">
+                <h2 id="title2">HTML, CSS, Python, Django, Git, and Command Line</h2>
                 <hr />
-                <div class="codingprojects3">
+                <div class="codingprojects2">
                     <ul>
                         <li><a href="coding_projects/djdelights.html">Django Delights</a></li>
                         <li><a href="coding_projects/djdjitney.html">The Django Djitney</a></li>
@@ -264,25 +243,16 @@ hr {
                 </div>
             </section>
     
-            <section id="min-section4">
-                <h2 id="title4">HTML, CSS, and JavaScript</h2>
+            <section id="min-section3">
+                <h2 id="title3">HTML and CSS | HTML, CSS, and JavaScript</h2>
                 <hr />
-                <div class="codingprojects4">
+                <div class="codingprojects3">
                     <ul>
                         <li><a href="coding_projects/film-finder/project.html">Film Finder</a></li>
                         <li><a href="coding_projects/calculator.html">Calculator</a></li>
                         <li><a href="coding_projects/stopwatch.html">Stopwatch</a></li>
                         <li><a href="coding_projects/numberguess.html">Number Guesser Game</a></li>
                         <li><a href="coding_projects/piano.html">Interactive Piano Tutorial</a></li>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="min-section5">
-                <h2 id="title5">HTML and CSS</h2>
-                <hr />
-                <div class="codingprojects5">
-                    <ul>
                         <li><a href="#">Cybersecurity Project</a></li>
                         <li><a href="#">NLP Project</a></li>
                         <li><a href="coding_projects/htmlcheatsheet.html">HTML Cheatsheet</a></li>
@@ -294,6 +264,7 @@ hr {
                     </ul>
                 </div>
             </section>
+
         </section>
     </body>
 </html>

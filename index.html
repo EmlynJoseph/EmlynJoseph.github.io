@@ -5,9 +5,6 @@
         <meta name="viewport"content = "width=device-width, initial-scale = 1.0">
         <title>Home | Emlyn Joseph</title>
         <link rel="shortcut icon" href="imgs_vids/Shortcut_iconJPG.JPG">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cinzel:wght@600&family=Oswald:wght@300&display=swap" rel="stylesheet">
 
         <style>
 * {
@@ -16,13 +13,13 @@
     box-sizing: border-box;
 }
 body {
-    background-color: white;
+    background-color: rgb(255, 245, 230);
     /*
     background-image: linear-gradient(to right, white, rgb(204, 202, 202), rgb(26, 25, 25));
     */
 }
 .navbar {
-    background-color: rgb(2, 2, 66);
+    background-color: black;
     width: 100%;
     display: inline-flex;
     align-items: center;
@@ -37,9 +34,10 @@ body {
     flex-wrap: wrap;
 }
 .navbar ul li {
-    font-family: Bebas Neue, serif;
-    font-size: 1.8rem;
-    font-weight: bold;
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: -1.5px;
+    font-size: 1.4rem;
+    font-weight: 100;
 }
 .navbar ul li a {
     color: white;
@@ -48,19 +46,21 @@ body {
     transition: all 0.5s ease-in;
 }
 .navbar ul li a:hover {
-    color: rgb(0, 0, 88);
+    color: black;
     box-shadow: 0 0 0.7rem white;
     background-color: white;
 }
 header {
-    background-image: linear-gradient(to bottom, black, white, black, black, black);
     padding: 3rem;
     text-align: center;
+    background: url('https://t3.ftcdn.net/jpg/02/33/46/38/360_F_233463830_4PXmMgunvII7zRGW8tSX2lo4kFewkqke.jpg');
+    -webkit-background-size: cover;
 }
 #greeting {
-    font-family: Impact, Bebas Neue, serif, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 1.8rem;
     margin-top: 1rem;
+    color: steelblue;
 }
 
 /*Code was from https://thoughtbot.com/blog/css-animation-for-beginners*/
@@ -79,16 +79,17 @@ header {
 }
 
 #name {
-    font-weight: 100;
+    font-weight: 400;
+    font-size: 3.5rem;
     margin: 2.125rem 0;
-    color: white;
-    font-size: 4rem;
+    color: rgb(255, 245, 230);
+    font-family: Georgia, 'Times New Roman', Times, serif;
     animation: bounceIn 2s;
+    text-transform: uppercase;
 }
 
 #typing {
-    color: white;
-    background-image: linear-gradient(to right, #FCA311, orangered, rgb(129, 2, 2));
+    color: gold;
     border-radius: 1rem;
     padding: 1rem;
     font-family: "Courier New", "Courier", monospace, sans-serif;
@@ -98,64 +99,47 @@ header {
     position: absolute;
     top: 0;
     left: 0;
-    width: 8rem;
-    height: 5.4rem;
+    width: 7.8rem;
+    height: 5.2rem;
 }
 
-#section2 {
-    padding: 0.1rem 0;
-    text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 2.3rem;
-    background-color: whitesmoke;
-}
-#section1 .heading,
-#section2 .heading,
 #section3 .heading {
-    margin-top: 3rem;
-    text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 2.3rem;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 3.125rem;
+    color: black;
+    font-size: 3rem;
 }
-#section1 #img-container {
-    margin-top: 1rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    display: grid;
-    grid-template-columns: repeat(3, 4rem);
-    justify-content: space-between;
-    align-items: center;
-    padding: 1% 2%;
-}
-#section2 #img-container {
-    margin-top: 1rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    display: grid;
-    grid-template-columns: 0 0;
+
+#section3 #figure-container {
+    display: flex;
+    flex-direction: row;
     justify-content: space-evenly;
-    align-items: center;
-    padding: 1% 2%;
+    margin: 2rem 0;
 }
-#section1 #img-container figure, figcaption,
-#section2 #img-container figure, figcaption,
-#section3 h3 {
+#section3 .contact-fig {
+    width: 25rem;
+    justify-content: space-evenly;
+}
+
+#section3 .contact-fig, .contact-fig figcaption {
     display: flex;
     flex-direction: column;
     align-content: center;
     justify-content: center;
     align-items: center;
     margin: 1rem 0.1rem 0;
-    font-family: Bebas Neue;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    color: rgb(0, 0, 88);
 }
-#section1 #img-container img,
-#section2 #img-container img {
+
+#section3 .contact-fig img {
     margin: 1rem 0.1rem 0;
     height: 3.4rem;
     width: auto;
 }
-#section3 h3 span {
+#section3 .contact-fig figcaption {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin-bottom: 1.5rem;
 }
@@ -173,22 +157,6 @@ header {
     }
     #name {
         font-size: 4.3rem;
-    }
-    #section1 .heading,
-    #section2 .heading {
-        font-size: 3.5rem;
-    }
-    #section1 #img-container {
-        grid-template-columns: 10rem 10rem 10rem;
-    }
-    #section1 #img-container figure, figcaption,
-    #section2 #img-container figure, figcaption {
-        font-size: 2.3rem;
-    }
-    #section1 #img-container img,
-    #section2 #img-container img {
-        height: 6rem;
-        width: auto;
     }
 }
 @media only screen and (max-width: 660px) {
@@ -221,21 +189,42 @@ header {
 
         <header>
             <h2 id="greeting">Hello, my name is</h2>
-            <h1 id="name">𝔼𝕞𝕝𝕪𝕟 𝕁𝕠𝕤𝕖𝕡𝕙</h1>
-            <h3><span id="typing">8th Grader</span></h3>
+            <h1 id="name">Emlyn Joseph</h1>
+            <div id="typing">
+                <h3><span>8th Grader</span></h3>
+            </div>
         </header>
 
         <section id="section3">
-            <h2 class="heading">Contact</h2>
-            <h3><span>emlynjoe@gmail.com</span></h3>
+            <h2 class="heading">Contact Me</h2>
+
+            <section id="figure-container">
+                <figure class="contact-fig">
+                    <img src="https://askbenhandyman.co.uk/wp-content/uploads/2016/04/e-mail-symbol.png" alt="gmail logo">
+                    <figcaption>Email</figcaption>
+                    <figcaption>emlynjoe@gmail.com</figcaption>
+                </figure>
+
+                <figure class="contact-fig">
+                    <img src="https://www.freeiconspng.com/uploads/discord-black-icon-1.png" alt="discord logo">
+                    <figcaption>Discord</figcaption>
+                    <figcaption>Emlyn Joseph#0947</figcaption>
+                </figure>
+
+<!--                <figure class="contact-fig">-->
+<!--                    <img src="" alt="logo">-->
+<!--                    <figcaption></figcaption>-->
+<!--                    <figcaption></figcaption>-->
+<!--                </figure>-->
+            </section>
         </section>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" referrerpolicy="no-referrer"></script>
         <script>
-            let typed =  new Typed("#typing", {
+            let typed =  new Typed("#typing h3 span", {
                 strings: ["", "8th Grader", "Web Developer", "Programmer", "Athlete", "Pianist", "YouTuber"],
                 typeSpeed: 135,
-                backSpeed: 60,
+                backSpeed: 50,
                 loop: true
             })
         </script>
