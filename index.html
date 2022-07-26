@@ -18,6 +18,46 @@ body {
     background-image: linear-gradient(to right, white, rgb(204, 202, 202), rgb(26, 25, 25));
     */
 }
+
+/* Lines 23 to 59 is from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader5 for CSS preloading animation. The code was modified to suit this website. */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 5rem;
+  height: 5rem;
+  margin: -3.5rem 0 0 -3rem;
+  border: 0.75rem solid black;
+  border-radius: 50%;
+  border-top: 0.75rem solid steelblue;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 }
+  to { bottom:0px; opacity:1 }
+}
+@keyframes animatebottom {
+  from{ bottom:-100px; opacity:0 }
+  to{ bottom:0; opacity:1 }
+}
+
 .navbar {
     background-color: black;
     width: 100%;
@@ -63,7 +103,7 @@ header {
     color: steelblue;
 }
 
-/*Code was from https://thoughtbot.com/blog/css-animation-for-beginners*/
+/* Lines 120 to 132 were from https://thoughtbot.com/blog/css-animation-for-beginners */
 @keyframes bounceIn {
   0% {
     transform: scale(0.1);
@@ -185,52 +225,58 @@ header {
 
         </style>
     </head>
-    <body>
-        <nav class="navbar">
-            <ul class="list">
-                <a href="index.html"><img id="img" src="imgs_vids/LogoJPG.JPG"></a>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="coding.html">Projects</a></li>
-                <li><a href="youtube.html">YouTube</a></li>
-                <li><a href="skills.html">Skills</a></li>
-            </ul>
-        </nav>
+    <body onload="myFunction()">
+        <div id="loader"></div>
 
-        <header>
-            <h2 id="greeting">Hello, my name is</h2>
-            <h1 id="name">Emlyn Joseph</h1>
-            <div id="typing">
-                <h3><span>8th Grader</span></h3>
-            </div>
-        </header>
+        <div style="display:none;" id="myDiv" class="animate-bottom">
+            <nav class="navbar">
+                <ul class="list">
+                    <a href="index.html"><img id="img" src="imgs_vids/LogoJPG.JPG"></a>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="coding.html">Projects</a></li>
+                    <li><a href="youtube.html">YouTube</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                </ul>
+            </nav>
+            <header>
+                <h2 id="greeting">Hello, my name is</h2>
+                <h1 id="name">Emlyn Joseph</h1>
+                <div id="typing">
+                    <h3><span>8th Grader</span></h3>
+                </div>
+            </header>
 
-        <section id="section3">
-            <h2 class="heading">Contact Me</h2>
+            <section id="section3">
+                <h2 class="heading">Contact Me</h2>
 
-            <section id="figure-container">
-                <figure class="contact-fig">
-                    <img src="https://askbenhandyman.co.uk/wp-content/uploads/2016/04/e-mail-symbol.png" alt="gmail logo">
-                    <figcaption>Email</figcaption>
-                    <figcaption>emlynjoe@gmail.com</figcaption>
-                </figure>
+                <section id="figure-container">
+                    <figure class="contact-fig">
+                        <img src="https://askbenhandyman.co.uk/wp-content/uploads/2016/04/e-mail-symbol.png" alt="gmail logo">
+                        <figcaption>Email</figcaption>
+                        <figcaption>emlynjoe@gmail.com</figcaption>
+                    </figure>
 
-                <figure class="contact-fig">
-                    <img src="https://www.freeiconspng.com/uploads/discord-black-icon-1.png" alt="discord logo">
-                    <figcaption>Discord</figcaption>
-                    <figcaption>Emlyn Joseph#0947</figcaption>
-                </figure>
-
-<!--                <figure class="contact-fig">-->
-<!--                    <img src="" alt="logo">-->
-<!--                    <figcaption></figcaption>-->
-<!--                    <figcaption></figcaption>-->
-<!--                </figure>-->
+                    <figure class="contact-fig">
+                        <img src="https://www.freeiconspng.com/uploads/discord-black-icon-1.png" alt="discord logo">
+                        <figcaption>Discord</figcaption>
+                        <figcaption>Emlyn Joseph#0947</figcaption>
+                    </figure>
+                </section>
             </section>
-        </section>
+        </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" referrerpolicy="no-referrer"></script>
         <script>
+            /* Lines 272 to 278 are from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader5 */
+            function myFunction() {
+              myVar = setTimeout(showPage, 250);
+            }
+            function showPage() {
+              document.getElementById("loader").style.display = "none";
+              document.getElementById("myDiv").style.display = "block";
+            }
+
             let typed =  new Typed("#typing h3 span", {
                 strings: ["", "8th Grader", "Web Developer", "Programmer", "Athlete", "Pianist", "YouTuber"],
                 typeSpeed: 135,

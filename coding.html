@@ -18,6 +18,46 @@ body {
     background-image: linear-gradient(to right, white, rgb(204, 202, 202), rgb(26, 25, 25));
     */
 }
+
+/* Lines 23 to 70 is from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader5 for CSS preloading animation. The code was modified to suit this website. */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 5rem;
+  height: 5rem;
+  margin: -3.5rem 0 0 -3rem;
+  border: 0.75rem solid black;
+  border-radius: 50%;
+  border-top: 0.75rem solid steelblue;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 }
+  to { bottom:0px; opacity:1 }
+}
+@keyframes animatebottom {
+  from{ bottom:-100px; opacity:0 }
+  to{ bottom:0; opacity:1 }
+}
+
 hr {
     margin-top: 2rem;
 }
@@ -197,75 +237,90 @@ hr {
     
         </style>
     </head>
-    </body>
-        <header class="navbar">
-            <ul class="list">
-                <a href="index.html"><img id="img" src="imgs_vids/LogoJPG.JPG"></a>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="coding.html">Projects</a></li>
-                <li><a href="youtube.html">YouTube</a></li>
-                <li><a href="skills.html">Skills</a></li>
-            </ul>
-        </header>
+    <body onload="myFunction()">
+        <div id="loader"></div>
 
-        <h1 id="name">Coding Projects</h1>
-        <p id="info">These are some of my favorite and most interactive projects that I've created using powerful languages and libraries. <br><span style="font-weight: bold; font-style: italic; font-family: 'Trebuchet MS', 'serif'; text-decoration: underline;">Keep scrolling down and you can click on any one of them.</span></p>
+        <div style="display:none;" id="myDiv" class="animate-bottom">
+            <header class="navbar">
+                <ul class="list">
+                    <a href="index.html"><img id="img" src="imgs_vids/LogoJPG.JPG"></a>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="coding.html">Projects</a></li>
+                    <li><a href="youtube.html">YouTube</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                </ul>
+            </header>
 
-        <section id="section1">
-            <section id="min-section1">
-                <h2 id="title">HTML, CSS, JavaScript, React and/or Redux, Git, and Command Line</h2>
-                <hr />
-                <div class="codingprojects">
-                    <ul>
-                        <li><a href="coding_projects/insp-stopwatch.html">Inspirational Stopwatch</a></li>
-                        <li><a href="coding_projects/flashcards.html">Flashcards</a></li>
-                        <li><a href="coding_projects/memorygame.html">Matching Memory Game</a></li>
-                        <li><a href="coding_projects/expensetracker.html">Expense Tracker</a></li>
-                        <li><a href="coding_projects/onlinestore.html">Online Store</a></li>
-                        <li><a href="coding_projects/jamming.html">Jamming (Spotify App)</a></li>
-                        <li><a href="coding_projects/appointment.html">Appointment Planner</a></li>
-                        <li><a href="coding_projects/adopt-pet.html">Adopt a Pet</a></li>
-                        <li><a href="coding_projects/passingthoughts.html">Passing Thoughts</a></li>
-                        <li><a href="coding_projects/colorpicker.html">Color Picker</a></li>
-                    </ul>
-                </div>
+            <h1 id="name">Coding Projects</h1>
+            <p id="info">These are some of my favorite and most interactive projects that I've created using powerful languages and libraries. <br><span style="font-weight: bold; font-style: italic; font-family: 'Trebuchet MS', 'serif'; text-decoration: underline;">Keep scrolling down and you can click on any one of them.</span></p>
+
+            <section id="section1">
+                <section id="min-section1">
+                    <h2 id="title">HTML, CSS, JavaScript, React and/or Redux, Git, and Command Line</h2>
+                    <hr />
+                    <div class="codingprojects">
+                        <ul>
+                            <li><a href="coding_projects/insp-stopwatch.html">Inspirational Stopwatch</a></li>
+                            <li><a href="coding_projects/flashcards.html">Flashcards</a></li>
+                            <li><a href="coding_projects/memorygame.html">Matching Memory Game</a></li>
+                            <li><a href="coding_projects/expensetracker.html">Expense Tracker</a></li>
+                            <li><a href="coding_projects/onlinestore.html">Online Store</a></li>
+                            <li><a href="coding_projects/jamming.html">Jamming (Spotify App)</a></li>
+                            <li><a href="coding_projects/appointment.html">Appointment Planner</a></li>
+                            <li><a href="coding_projects/adopt-pet.html">Adopt a Pet</a></li>
+                            <li><a href="coding_projects/passingthoughts.html">Passing Thoughts</a></li>
+                            <li><a href="coding_projects/colorpicker.html">Color Picker</a></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="min-section2">
+                    <h2 id="title2">HTML, CSS, Python, Django, Git, and Command Line</h2>
+                    <hr />
+                    <div class="codingprojects2">
+                        <ul>
+                            <li><a href="coding_projects/djdelights.html">Django Delights</a></li>
+                            <li><a href="coding_projects/djdjitney.html">The Django Djitney</a></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="min-section3">
+                    <h2 id="title3">HTML and CSS | HTML, CSS, and JavaScript</h2>
+                    <hr />
+                    <div class="codingprojects3">
+                        <ul>
+                            <li><a href="coding_projects/film-finder/project.html">Film Finder</a></li>
+                            <li><a href="coding_projects/calculator.html">Calculator</a></li>
+                            <li><a href="coding_projects/stopwatch.html">Stopwatch</a></li>
+                            <li><a href="coding_projects/numberguess.html">Number Guesser Game</a></li>
+                            <li><a href="coding_projects/piano.html">Interactive Piano Tutorial</a></li>
+                            <li><a href="#">Cybersecurity Project</a></li>
+                            <li><a href="#">NLP Project</a></li>
+                            <li><a href="coding_projects/htmlcheatsheet.html">HTML Cheatsheet</a></li>
+                            <!-- <li><a href="coding_projects/csscheatsheet.html">CSS Style Guide</a></li> -->
+                            <li><a href="coding_projects/excursion.html">Excursion App Advertisement</a></li>
+                            <li><a href="coding_projects/fotomatic/fotomatic.html">Fotomatic</a></li>
+                            <li><a href="coding_projects/codingclub.html">Coding Club</a></li>
+                            <li><a href="coding_projects/teacozy.html">Tea Cozy</a></li>
+                        </ul>
+                    </div>
+                </section>
+
             </section>
+        </div>
 
-            <section id="min-section2">
-                <h2 id="title2">HTML, CSS, Python, Django, Git, and Command Line</h2>
-                <hr />
-                <div class="codingprojects2">
-                    <ul>
-                        <li><a href="coding_projects/djdelights.html">Django Delights</a></li>
-                        <li><a href="coding_projects/djdjitney.html">The Django Djitney</a></li>
-                    </ul>
-                </div>
-            </section>
-    
-            <section id="min-section3">
-                <h2 id="title3">HTML and CSS | HTML, CSS, and JavaScript</h2>
-                <hr />
-                <div class="codingprojects3">
-                    <ul>
-                        <li><a href="coding_projects/film-finder/project.html">Film Finder</a></li>
-                        <li><a href="coding_projects/calculator.html">Calculator</a></li>
-                        <li><a href="coding_projects/stopwatch.html">Stopwatch</a></li>
-                        <li><a href="coding_projects/numberguess.html">Number Guesser Game</a></li>
-                        <li><a href="coding_projects/piano.html">Interactive Piano Tutorial</a></li>
-                        <li><a href="#">Cybersecurity Project</a></li>
-                        <li><a href="#">NLP Project</a></li>
-                        <li><a href="coding_projects/htmlcheatsheet.html">HTML Cheatsheet</a></li>
-                        <!-- <li><a href="coding_projects/csscheatsheet.html">CSS Style Guide</a></li> -->
-                        <li><a href="coding_projects/excursion.html">Excursion App Advertisement</a></li>
-                        <li><a href="coding_projects/fotomatic/fotomatic.html">Fotomatic</a></li>
-                        <li><a href="coding_projects/codingclub.html">Coding Club</a></li>
-                        <li><a href="coding_projects/teacozy.html">Tea Cozy</a></li>
-                    </ul>
-                </div>
-            </section>
-
-        </section>
+        <script>
+            /* Lines 272 to 278 are from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader5 */
+            function myFunction() {
+              myVar = setTimeout(showPage, 250);
+            }
+            function showPage() {
+              document.getElementById("loader").style.display = "none";
+              document.getElementById("myDiv").style.display = "block";
+            }
+        </script>
     </body>
 </html>
 
