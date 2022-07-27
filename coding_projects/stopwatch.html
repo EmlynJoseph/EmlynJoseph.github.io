@@ -18,6 +18,46 @@ body {
     background-image: linear-gradient(to right, white, rgb(204, 202, 202), rgb(26, 25, 25));
     */
 }
+
+/* Lines 23 to 59 are from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader5 for CSS preloading animation. The code was modified to suit this website. */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 5rem;
+  height: 5rem;
+  margin: -3.5rem 0 0 -3rem;
+  border: 0.75rem solid rgb(0, 0, 88);
+  border-radius: 50%;
+  border-top: 0.75rem solid skyblue;
+  -webkit-animation: spin 1.25s linear infinite;
+  animation: spin 1.25s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 }
+  to { bottom:0px; opacity:1 }
+}
+@keyframes animatebottom {
+  from{ bottom:-100px; opacity:0 }
+  to{ bottom:0; opacity:1 }
+}
+
 .navbar {
     background-color: black;
     width: 100%;
@@ -51,11 +91,8 @@ body {
     background-color: white;
 }
 #img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 7.8rem;
-    height: 5.2rem;
+    width: 3.6rem;
+    height: 3.8rem;
 }
 #name {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -237,36 +274,50 @@ body {
         </style>
     </head>
 
-    <body>
-        <header class="navbar">
-            <ul>
-                <a href="../index.html"><img id="img" src="../imgs_vids/LogoJPG.JPG"></a>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../about.html">About</a></li>
-                <li><a href="../coding.html">Projects</a></li>
-                <li><a href="../youtube.html">YouTube</a></li>
-                <li><a href="../skills.html">Skills</a></li>
-            </ul>
-        </header>
+    <body onload="myFunction()">
+        <div id="loader"></div>
 
-        <h1 id="name">Stopwatch</h1>
+        <div style="display:none;" id="myDiv" class="animate-bottom">
+            <header class="navbar">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../coding.html">Projects</a></li>
+                    <a href="../index.html"><img id="img" src="../imgs_vids/Shortcut_iconJPG.JPG"></a>
+                    <li><a href="../github.html">Github</a></li>
+                    <li><a href="../youtube.html">YouTube</a></li>
+                    <li><a href="../skills.html">Skills</a></li>
+                </ul>
+            </header>
 
-        <div class="labels">
-            <p id="hr">00</p>
-            <p id="min">00</p>
-            <p id="sec">00</p>
-        </div>
+            <h1 id="name">Stopwatch</h1>
 
-        <div class="buttonS"> 
-            <ul>
-                <li><button onclick="start()" id="start">Start</button></li>
-                <li><button onclick="stop()" id="stop">Stop</button></li>
-                <li><button onclick="reset()" id="reset">Reset</button></li>
-            </ul>           
-                
+            <div class="labels">
+                <p id="hr">00</p>
+                <p id="min">00</p>
+                <p id="sec">00</p>
+            </div>
+
+            <div class="buttonS">
+                <ul>
+                    <li><button onclick="start()" id="start">Start</button></li>
+                    <li><button onclick="stop()" id="stop">Stop</button></li>
+                    <li><button onclick="reset()" id="reset">Reset</button></li>
+                </ul>
+
+            </div>
         </div>
 
         <script>
+            /* Lines 313 to 319 are from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader5 */
+            function myFunction() {
+              myVar = setTimeout(showPage, 250);
+            }
+            function showPage() {
+              document.getElementById("loader").style.display = "none";
+              document.getElementById("myDiv").style.display = "block";
+            }
+
             let hr = 0;
             let min = 0;
             let sec = 0;

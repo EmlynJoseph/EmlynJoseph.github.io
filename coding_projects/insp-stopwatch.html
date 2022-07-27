@@ -18,6 +18,46 @@ body {
     background-image: linear-gradient(to right, white, rgb(204, 202, 202), rgb(26, 25, 25));
     */
 }
+
+/* Lines 23 to 59 are from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader5 for CSS preloading animation. The code was modified to suit this website. */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 5rem;
+  height: 5rem;
+  margin: -3.5rem 0 0 -3rem;
+  border: 0.75rem solid rgb(0, 0, 88);
+  border-radius: 50%;
+  border-top: 0.75rem solid skyblue;
+  -webkit-animation: spin 1.25s linear infinite;
+  animation: spin 1.25s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 }
+  to { bottom:0px; opacity:1 }
+}
+@keyframes animatebottom {
+  from{ bottom:-100px; opacity:0 }
+  to{ bottom:0; opacity:1 }
+}
+
 .navbar {
     background-color: black;
     width: 100%;
@@ -60,11 +100,8 @@ body {
     font-size: 3rem;
 }
 #img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 7.8rem;
-    height: 5.2rem;
+    width: 3.6rem;
+    height: 3.8rem;
 }
 
 #content {
@@ -128,22 +165,39 @@ body {
 
         </style>
     </head>
-    <body>
-        <header class="navbar">
-            <ul class="list">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../about.html">About</a></li>
-                <li><a href="../coding.html">Projects</a></li>
-                <li><a href="../youtube.html">YouTube</a></li>
-                <li><a href="../skills.html">Skills</a></li>
-                <a href="../index.html"><img id="img" src="../imgs_vids/LogoJPG.JPG"></a>
-            </ul>
-        </header>
+    <body onload="myFunction()">
+        <div id="loader"></div>
 
-        <h1 id="name">Inspirational Stopwatch</h1>
-        <div id="content">
-            <a id="link" target="_blank" href="https://emlyn-reactredux-app-inspirational-stopwatch.netlify.app/">Web App</a>
-            <p><br>This is the portfolio project at the end of the Create an Advanced Web App with React and Redux Skill Path in Codecademy. Instead of making an inspirational to-do app shown on Codecademy, I made an inspirational stopwatch. This project uses React and Redux, two versatile libraries that work really well with each other. React is for the UI and Redux is for managing the state of the app.<br>This project also uses a few API's, <a target="_blank" href="https://unsplash.com/developers">Unsplash API</a>, <a target="_blank" href="https://openweathermap.org/api">OpenWeatherMap API</a>, and <a target="_blank" href="https://quotes.rest/">They Said So Quotes API</a>. I used these APIs by making asynchronous requests with a URI (Uniform Resource Identifier) with specific queries. Then, I handled the received data and extracted the data I needed for my app. Throughout the processes when using APIs, I referred to each of the documentations, <a target="_blank" href="https://unsplash.com/documentation#search-photos">Unsplash Documentation</a>, <a target="_blank" href="https://openweathermap.org/current">OpenWeatherMap Documentation</a>, and <a target="_blank" href="https://theysaidso.com/api/#qod">They Said So Quotes Documentation</a>. <br>Before starting the project, I set a timeline for myself with firm boundaries and deadlines so that I can stay on track. I first created the file structure of the entire app, which gives me a general overview of the app. After that, I worked on each feature of the app, not worrying about styles. As a result, the rendering was scattered across the page. I later configured the Redux store and binded it to the React UI rendering in order to make Redux accessible through the React components. Creating the stopwatch was the easier part and I referred to some resources and tutorials online. The App component was the top level component that rendered each component/feature. I worked on the styles and responsiveness at the end of each feature. <br>This was a challenging project and <a href="https://stackoverflow.com/">Stack Overflow</a> and the documentations were great resources throughout the whole project. <br>I used Git for version control and regularly updated my changes onto Github. This web app was deployed through Netlify. <span style="font-weight: bold; font-style: normal; text-transform: uppercase; text-decoration: underline;">Click the "Web App" link below the title to view the app.</span></p>
+        <div style="display:none;" id="myDiv" class="animate-bottom">
+            <header class="navbar">
+                <ul class="list">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../coding.html">Projects</a></li>
+                    <a href="../index.html"><img id="img" src="../imgs_vids/Shortcut_iconJPG.JPG"></a>
+                    <li><a href="../github.html">Github</a></li>
+                    <li><a href="../youtube.html">YouTube</a></li>
+                    <li><a href="../skills.html">Skills</a></li>
+                </ul>
+            </header>
+
+            <h1 id="name">Inspirational Stopwatch</h1>
+            <div id="content">
+                <a id="link" target="_blank" href="https://emlyn-reactredux-app-inspirational-stopwatch.netlify.app/">Web App</a>
+                <p><br>This is the portfolio project at the end of the Create an Advanced Web App with React and Redux Skill Path in Codecademy. Instead of making an inspirational to-do app shown on Codecademy, I made an inspirational stopwatch. This project uses React and Redux, two versatile libraries that work really well with each other. React is for the UI and Redux is for managing the state of the app.<br>This project also uses a few API's, <a target="_blank" href="https://unsplash.com/developers">Unsplash API</a>, <a target="_blank" href="https://openweathermap.org/api">OpenWeatherMap API</a>, and <a target="_blank" href="https://quotes.rest/">They Said So Quotes API</a>. I used these APIs by making asynchronous requests with a URI (Uniform Resource Identifier) with specific queries. Then, I handled the received data and extracted the data I needed for my app. Throughout the processes when using APIs, I referred to each of the documentations, <a target="_blank" href="https://unsplash.com/documentation#search-photos">Unsplash Documentation</a>, <a target="_blank" href="https://openweathermap.org/current">OpenWeatherMap Documentation</a>, and <a target="_blank" href="https://theysaidso.com/api/#qod">They Said So Quotes Documentation</a>. <br>Before starting the project, I set a timeline for myself with firm boundaries and deadlines so that I can stay on track. I first created the file structure of the entire app, which gives me a general overview of the app. After that, I worked on each feature of the app, not worrying about styles. As a result, the rendering was scattered across the page. I later configured the Redux store and binded it to the React UI rendering in order to make Redux accessible through the React components. Creating the stopwatch was the easier part and I referred to some resources and tutorials online. The App component was the top level component that rendered each component/feature. I worked on the styles and responsiveness at the end of each feature. <br>This was a challenging project and <a href="https://stackoverflow.com/">Stack Overflow</a> and the documentations were great resources throughout the whole project. <br>I used Git for version control and regularly updated my changes onto Github. This web app was deployed through Netlify. <span style="font-weight: bold; font-style: normal; text-transform: uppercase; text-decoration: underline;">Click the "Web App" link below the title to view the app.</span></p>
+            </div>
         </div>
+
+        <script>
+            /* Lines 193 to 199 are from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader5 */
+            function myFunction() {
+              myVar = setTimeout(showPage, 250);
+            }
+            function showPage() {
+              document.getElementById("loader").style.display = "none";
+              document.getElementById("myDiv").style.display = "block";
+            }
+        </script>
+
     </body>
 </html>

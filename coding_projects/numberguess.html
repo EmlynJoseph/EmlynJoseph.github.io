@@ -18,6 +18,46 @@ body {
     background-image: linear-gradient(to right, white, rgb(204, 202, 202), rgb(26, 25, 25));
     */
 }
+
+/* Lines 23 to 59 are from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader5 for CSS preloading animation. The code was modified to suit this website. */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 5rem;
+  height: 5rem;
+  margin: -3.5rem 0 0 -3rem;
+  border: 0.75rem solid rgb(0, 0, 88);
+  border-radius: 50%;
+  border-top: 0.75rem solid skyblue;
+  -webkit-animation: spin 1.25s linear infinite;
+  animation: spin 1.25s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 }
+  to { bottom:0px; opacity:1 }
+}
+@keyframes animatebottom {
+  from{ bottom:-100px; opacity:0 }
+  to{ bottom:0; opacity:1 }
+}
+
 .navbar {
     background-color: black;
     width: 100%;
@@ -60,11 +100,8 @@ body {
     font-size: 3rem;
 }
 #img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 7.8rem;
-    height: 5.2rem;
+    width: 3.6rem;
+    height: 3.8rem;
 }
 
 #info {
@@ -259,186 +296,199 @@ input[type=number]::-webkit-inner-spin-button {
 
         </style>
     </head>
-    <body>
-        <header class="navbar">
-            <ul class="list">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../about.html">About</a></li>
-                <li><a href="../coding.html">Projects</a></li>
-                <li><a href="../youtube.html">YouTube</a></li>
-                <li><a href="../skills.html">Skills</a></li>
-                <a href="../index.html"><img id="img" src="../imgs_vids/LogoJPG.JPG"></a>
-            </ul>
-        </header>
+    <body onload="myFunction()">
+        <div id="loader"></div>
 
-        <h1 id="name">Number Guesser</h1>
+        <div style="display:none;" id="myDiv" class="animate-bottom">
+            <header class="navbar">
+                <ul class="list">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../coding.html">Projects</a></li>
+                    <a href="../index.html"><img id="img" src="../imgs_vids/Shortcut_iconJPG.JPG"></a>
+                    <li><a href="../github.html">Github</a></li>
+                    <li><a href="../youtube.html">YouTube</a></li>
+                    <li><a href="../skills.html">Skills</a></li>
+                </ul>
+            </header>
 
-        <h2 id="info">Enter a number between 0 and 10 or use the + and - to enter a number. <br> Then, press the other button to make a guess. <br>If your guess is closer to the target number than the computer's guess, you win! <br>Otherwise, you lost. Click next round to play again.</h2>
-        <div class="game-container">
-            
-            <div class="rounds">
-              <p class="round-label">Round <span id="round-number">1</span></p>
-              <p class="guess-label">Target Number: <span id="target-number">?</span></p>
-            </div>
-      
-            <div class="guessing-area">
-              <div class="guess computer-guess">
-                <div class="guess-title">
-                  <p class="guess-label">Computer</p>
-                  <p class="score-label">Score: <span id="computer-score">0</span></p>
+            <h1 id="name">Number Guesser</h1>
+
+            <h2 id="info">Enter a number between 0 and 10 or use the + and - to enter a number. <br> Then, press the other button to make a guess. <br>If your guess is closer to the target number than the computer's guess, you win! <br>Otherwise, you lost. Click next round to play again.</h2>
+            <div class="game-container">
+
+                <div class="rounds">
+                  <p class="round-label">Round <span id="round-number">1</span></p>
+                  <p class="guess-label">Target Number: <span id="target-number">?</span></p>
                 </div>
-                <p id="computer-guess">?</p>
-                <p class="winning-text" id="computer-wins"></p>
-              </div>
-              <div class="guess human-guess">
-                <div class="guess-title">
-                  <p class="guess-label">You</p>
-                  <p class="score-label">Score: <span id="human-score">0</span></p>
+
+                <div class="guessing-area">
+                  <div class="guess computer-guess">
+                    <div class="guess-title">
+                      <p class="guess-label">Computer</p>
+                      <p class="score-label">Score: <span id="computer-score">0</span></p>
+                    </div>
+                    <p id="computer-guess">?</p>
+                    <p class="winning-text" id="computer-wins"></p>
+                  </div>
+                  <div class="guess human-guess">
+                    <div class="guess-title">
+                      <p class="guess-label">You</p>
+                      <p class="score-label">Score: <span id="human-score">0</span></p>
+                    </div>
+                    <input type="number" id="human-guess" min=0 max=9 value=0>
+                    <div class="number-controls">
+                      <button class="number-control left" id="subtract" disabled>-</button>
+                      <button class="number-control right" id="add">+</button>
+                    </div>
+                    <button class="button" id="guess">Make a Guess</button>
+                  </div>
                 </div>
-                <input type="number" id="human-guess" min=0 max=9 value=0>
-                <div class="number-controls">
-                  <button class="number-control left" id="subtract" disabled>-</button>
-                  <button class="number-control right" id="add">+</button>
+
+                <div class="next-round-container">
+                  <button class="button" id="next-round" disabled>Next Round</button>
                 </div>
-                <button class="button" id="guess">Make a Guess</button>
-              </div>
+
             </div>
+        </div>
       
-            <div class="next-round-container">
-              <button class="button" id="next-round" disabled>Next Round</button>
-            </div>
-      
-          </div>
+      <script>
+            /* Lines 357 to 363 are from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader5 */
+            function myFunction() {
+              myVar = setTimeout(showPage, 250);
+            }
+            function showPage() {
+              document.getElementById("loader").style.display = "none";
+              document.getElementById("myDiv").style.display = "block";
+            }
 
-      
-          <script>
-                let target;
-                let humanGuessInput = document.getElementById('human-guess');
-                let roundNumberDisplay = document.getElementById('round-number');
-                let computerGuessDisplay = document.getElementById('computer-guess');
-                let humanScoreDisplay = document.getElementById('human-score');
-                let computerScoreDisplay = document.getElementById('computer-score');
-                let targetNumberDisplay = document.getElementById('target-number');
-                let computerWinsDisplay = document.getElementById('computer-wins');
-                let guessButton = document.getElementById('guess');
-                let nextRoundButton = document.getElementById('next-round')
 
-                guessButton.addEventListener('click', function() {
-                    // Generate the target value
-                    target = generateTarget();
-                    // Retrieve the player's guess
-                    const currentHumanGuess = humanGuessInput.value;
-                    // Make a random 'computer guess'
-                    const computerGuess = Math.floor(Math.random() * 10);
+            let target;
+            let humanGuessInput = document.getElementById('human-guess');
+            let roundNumberDisplay = document.getElementById('round-number');
+            let computerGuessDisplay = document.getElementById('computer-guess');
+            let humanScoreDisplay = document.getElementById('human-score');
+            let computerScoreDisplay = document.getElementById('computer-score');
+            let targetNumberDisplay = document.getElementById('target-number');
+            let computerWinsDisplay = document.getElementById('computer-wins');
+            let guessButton = document.getElementById('guess');
+            let nextRoundButton = document.getElementById('next-round')
 
-                    // Display the computer guess and the target
-                    computerGuessDisplay.innerText = computerGuess;
-                    targetNumberDisplay.innerText = target;
-                    
-                    // Determine if the human or computer wins:
-                    const humanIsWinner = compareGuesses(currentHumanGuess, computerGuess, target)
-                    const winner = humanIsWinner ? 'human' : 'computer'
+            guessButton.addEventListener('click', function() {
+                // Generate the target value
+                target = generateTarget();
+                // Retrieve the player's guess
+                const currentHumanGuess = humanGuessInput.value;
+                // Make a random 'computer guess'
+                const computerGuess = Math.floor(Math.random() * 10);
 
-                    // Update the correct score:
-                    updateScore(winner);
+                // Display the computer guess and the target
+                computerGuessDisplay.innerText = computerGuess;
+                targetNumberDisplay.innerText = target;
 
-                    // Display the winner
-                    if (humanIsWinner) {
-                        guessButton.innerText = 'Congratulations, you win!';
-                        guessButton.classList.toggle('winning-text')
-                    } else {
-                        computerWinsDisplay.innerText = 'The computer wins! Better luck next time!';
-                    }
+                // Determine if the human or computer wins:
+                const humanIsWinner = compareGuesses(currentHumanGuess, computerGuess, target)
+                const winner = humanIsWinner ? 'human' : 'computer'
 
-                    // Display the current scores:
-                    humanScoreDisplay.innerText = humanScore;
-                    computerScoreDisplay.innerText = computerScore;
-                    
-                    // Set the correct disabled state for the buttons
-                    guessButton.setAttribute('disabled', true)
-                    nextRoundButton.removeAttribute('disabled');
-                });
+                // Update the correct score:
+                updateScore(winner);
 
-                nextRoundButton.addEventListener('click', function() {
-                    // Increase the round number
-                    advanceRound();
-                    // Display the new round number
-                    roundNumberDisplay.innerText = currentRoundNumber;
-
-                    // Set the correct disabled state for the buttons
-                    nextRoundButton.setAttribute('disabled', true);
-                    guessButton.removeAttribute('disabled');
-
-                    // Reset the guess input box and the target number display:
-                    targetNumberDisplay.innerText = '?';
-                    guessButton.innerText = 'Make a Guess';
-                    humanGuessInput.value = '';
-                    computerGuessDisplay.innerText = '?';
-                    computerWinsDisplay.innerText = '';
-                    guessButton.classList.remove('winning-text');
-                });
-
-                const addButton = document.getElementById('add');
-                const subtractButton = document.getElementById('subtract');
-
-                addButton.addEventListener('click', function() {
-                    humanGuessInput.value = +humanGuessInput.value + 1;
-                    handleValueChange(humanGuessInput.value);
-                });
-                subtractButton.addEventListener('click', function() {
-                    humanGuessInput.value = +humanGuessInput.value - 1;
-                    handleValueChange(humanGuessInput.value);
-                });
-
-                const handleValueChange = value => {
-                if (value > 0 && value <= 9) {
-                    subtractButton.removeAttribute('disabled');
-                    addButton.removeAttribute('disabled');
-                } else if (value > 9) {
-                    addButton.setAttribute('disabled', true);
-                } else if (value <= 0) {
-                    subtractButton.setAttribute('disabled', true);
-                }
+                // Display the winner
+                if (humanIsWinner) {
+                    guessButton.innerText = 'Congratulations, you win!';
+                    guessButton.classList.toggle('winning-text')
+                } else {
+                    computerWinsDisplay.innerText = 'The computer wins! Better luck next time!';
                 }
 
-                humanGuessInput.addEventListener('input', function(e) {
-                    handleValueChange(e.target.value);
-                });
+                // Display the current scores:
+                humanScoreDisplay.innerText = humanScore;
+                computerScoreDisplay.innerText = computerScore;
 
-                let humanScore = 0;
-                let computerScore = 0;
-                let currentRoundNumber = 1;
+                // Set the correct disabled state for the buttons
+                guessButton.setAttribute('disabled', true)
+                nextRoundButton.removeAttribute('disabled');
+            });
 
-                const generateTarget = () => {
-                    return Math.floor(Math.random() * 10)
+            nextRoundButton.addEventListener('click', function() {
+                // Increase the round number
+                advanceRound();
+                // Display the new round number
+                roundNumberDisplay.innerText = currentRoundNumber;
+
+                // Set the correct disabled state for the buttons
+                nextRoundButton.setAttribute('disabled', true);
+                guessButton.removeAttribute('disabled');
+
+                // Reset the guess input box and the target number display:
+                targetNumberDisplay.innerText = '?';
+                guessButton.innerText = 'Make a Guess';
+                humanGuessInput.value = '';
+                computerGuessDisplay.innerText = '?';
+                computerWinsDisplay.innerText = '';
+                guessButton.classList.remove('winning-text');
+            });
+
+            const addButton = document.getElementById('add');
+            const subtractButton = document.getElementById('subtract');
+
+            addButton.addEventListener('click', function() {
+                humanGuessInput.value = +humanGuessInput.value + 1;
+                handleValueChange(humanGuessInput.value);
+            });
+            subtractButton.addEventListener('click', function() {
+                humanGuessInput.value = +humanGuessInput.value - 1;
+                handleValueChange(humanGuessInput.value);
+            });
+
+            const handleValueChange = value => {
+            if (value > 0 && value <= 9) {
+                subtractButton.removeAttribute('disabled');
+                addButton.removeAttribute('disabled');
+            } else if (value > 9) {
+                addButton.setAttribute('disabled', true);
+            } else if (value <= 0) {
+                subtractButton.setAttribute('disabled', true);
+            }
+            }
+
+            humanGuessInput.addEventListener('input', function(e) {
+                handleValueChange(e.target.value);
+            });
+
+            let humanScore = 0;
+            let computerScore = 0;
+            let currentRoundNumber = 1;
+
+            const generateTarget = () => {
+                return Math.floor(Math.random() * 10)
+            }
+            const compareGuesses = (userGuess, computerGuess, targetNum) => {
+                let userVal = Math.abs(userGuess - targetNum)
+                let computerVal = Math.abs(computerGuess - targetNum)
+
+                if (userVal > computerVal) {
+                    return false;
                 }
-                const compareGuesses = (userGuess, computerGuess, targetNum) => {
-                    let userVal = Math.abs(userGuess - targetNum)
-                    let computerVal = Math.abs(computerGuess - targetNum)
-
-                    if (userVal > computerVal) {
-                        return false;
-                    }  
-                    else if (userVal < computerVal) {
-                        return true;
-                    } else {
-                        return true;
-                    }
+                else if (userVal < computerVal) {
+                    return true;
+                } else {
+                    return true;
                 }
+            }
 
-                const updateScore = winner => {
-                    if (winner === 'human') {
-                        humanScore++
-                    } if (winner === "computer") {
-                        computerScore++
-                    } 
+            const updateScore = winner => {
+                if (winner === 'human') {
+                    humanScore++
+                } if (winner === "computer") {
+                    computerScore++
                 }
+            }
 
-                const advanceRound = () => {
-                    currentRoundNumber++
-                }
-          </script>
+            const advanceRound = () => {
+                currentRoundNumber++
+            }
+      </script>
 
-        </body>
     </body>
 </html>

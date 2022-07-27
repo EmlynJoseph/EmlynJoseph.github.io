@@ -19,6 +19,46 @@ body {
     background-image: linear-gradient(to right, white, rgb(204, 202, 202), rgb(26, 25, 25));
     */
 }
+
+/* Lines 24 to 60 are from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader5 for CSS preloading animation. The code was modified to suit this website. */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 5rem;
+  height: 5rem;
+  margin: -3.5rem 0 0 -3rem;
+  border: 0.75rem solid rgb(0, 0, 88);
+  border-radius: 50%;
+  border-top: 0.75rem solid skyblue;
+  -webkit-animation: spin 1.25s linear infinite;
+  animation: spin 1.25s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 }
+  to { bottom:0px; opacity:1 }
+}
+@keyframes animatebottom {
+  from{ bottom:-100px; opacity:0 }
+  to{ bottom:0; opacity:1 }
+}
+
 .navbar {
     background-color: black;
     width: 100%;
@@ -61,11 +101,8 @@ body {
     font-size: 3rem;
 }
 #img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 7.8rem;
-    height: 5.2rem;
+    width: 3.6rem;
+    height: 3.8rem;
 }
 
 #calcontainer {
@@ -167,56 +204,61 @@ body {
     
         </style>
     </head>
-    </body>
-        <header class="navbar">
-            <ul class="list">
-                <a href="../index.html"><img id="img" src="../imgs_vids/LogoJPG.JPG" alt="letter e with Emlyn Joseph under it"></a>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../about.html">About</a></li>
-                <li><a href="../coding.html">Projects</a></li>
-                <li><a href="../youtube.html">YouTube</a></li>
-                <li><a href="../skills.html">Skills</a></li>
-            </ul>
-        </header>
-        <h1 id="name">Calculator</h1>
+    <body onload="myFunction()">
+        <div id="loader"></div>
 
-        <table id="calcontainer">
-            <tr>
-                <td colspan="4"><input type="text" id="result" disabled></td>
-            </tr>
+        <div style="display:none;" id="myDiv" class="animate-bottom">
+            <header class="navbar">
+                <ul class="list">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../coding.html">Projects</a></li>
+                    <a href="../index.html"><img id="img" src="../imgs_vids/Shortcut_iconJPG.JPG"></a>
+                    <li><a href="../github.html">Github</a></li>
+                    <li><a href="../youtube.html">YouTube</a></li>
+                    <li><a href="../skills.html">Skills</a></li>
+                </ul>
+            </header>
+            <h1 id="name">Calculator</h1>
 
-            <tr>
-                <td colspan="2"><input class = "button" type = "button" value = "C" onclick = "clear_()"><td>
-                <td><input class = "button" type = "button" value = "÷" onclick = "show('/')"></td>
-            </tr>
+            <table id="calcontainer">
+                <tr>
+                    <td colspan="4"><input type="text" id="result" disabled></td>
+                </tr>
 
-            <tr>
-                <td><input class = "button" type = "button" value = "7" onclick = "show('7')"></td>
-                <td><input class = "button" type = "button" value = "8" onclick = "show('8')"></td>
-                <td><input class = "button" type = "button" value = "9" onclick = "show('9')"></td>
-                <td><input class = "button" type = "button" value = "x" onclick = "show('*')"></td>
-            </tr>
+                <tr>
+                    <td colspan="2"><input class = "button" type = "button" value = "C" onclick = "clear_()"><td>
+                    <td><input class = "button" type = "button" value = "÷" onclick = "show('/')"></td>
+                </tr>
 
-            <tr>
-                <td><input class = "button" type = "button" value = "4" onclick = "show('4')"></td>
-                <td><input class = "button" type = "button" value = "5" onclick = "show('5')"></td>
-                <td><input class = "button" type = "button" value = "6" onclick = "show('6')"></td>
-                <td><input class = "button" type = "button" value = "-" onclick = "show('-')"></td>
-            </tr>
+                <tr>
+                    <td><input class = "button" type = "button" value = "7" onclick = "show('7')"></td>
+                    <td><input class = "button" type = "button" value = "8" onclick = "show('8')"></td>
+                    <td><input class = "button" type = "button" value = "9" onclick = "show('9')"></td>
+                    <td><input class = "button" type = "button" value = "x" onclick = "show('*')"></td>
+                </tr>
 
-            <tr>
-                <td><input class = "button" type = "button" value = "1" onclick = "show('1')"></td>
-                <td><input class = "button" type = "button" value = "2" onclick = "show('2')"></td>
-                <td><input class = "button" type = "button" value = "3" onclick = "show('3')"></td>
-                <td><input class = "button" type = "button" value = "+" onclick = "show('+')"></td>
-            </tr>
+                <tr>
+                    <td><input class = "button" type = "button" value = "4" onclick = "show('4')"></td>
+                    <td><input class = "button" type = "button" value = "5" onclick = "show('5')"></td>
+                    <td><input class = "button" type = "button" value = "6" onclick = "show('6')"></td>
+                    <td><input class = "button" type = "button" value = "-" onclick = "show('-')"></td>
+                </tr>
 
-            <tr>
-                <td><input class = "button" type = "button" value = "0" onclick = "show('0')"></td>
-                <td><input class = "button" type = "button" value = "." onclick = "show('.')"></td>
-                <td colspan="2"><input class = "button" id="equal" type = "button" value = "=" onclick = "solve()"></td>
-            </tr>
-        </table>
+                <tr>
+                    <td><input class = "button" type = "button" value = "1" onclick = "show('1')"></td>
+                    <td><input class = "button" type = "button" value = "2" onclick = "show('2')"></td>
+                    <td><input class = "button" type = "button" value = "3" onclick = "show('3')"></td>
+                    <td><input class = "button" type = "button" value = "+" onclick = "show('+')"></td>
+                </tr>
+
+                <tr>
+                    <td><input class = "button" type = "button" value = "0" onclick = "show('0')"></td>
+                    <td><input class = "button" type = "button" value = "." onclick = "show('.')"></td>
+                    <td colspan="2"><input class = "button" id="equal" type = "button" value = "=" onclick = "solve()"></td>
+                </tr>
+            </table>
+        </div>
 
         <script>
             const show = val => {
@@ -232,6 +274,16 @@ body {
             const clear_ = () => {
                 document.getElementById("result").value = ""
             }
+
+            /* Lines 279 to 285 are from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader5 */
+            function myFunction() {
+              myVar = setTimeout(showPage, 250);
+            }
+            function showPage() {
+              document.getElementById("loader").style.display = "none";
+              document.getElementById("myDiv").style.display = "block";
+            }
+        </script>
         </script>
         
    </body>

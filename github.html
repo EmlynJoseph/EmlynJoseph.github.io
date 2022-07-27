@@ -3,10 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport"content = "width=device-width, initial-scale = 1.0">
-        <title>Jamming | Coding Projects | Emlyn Joseph</title>
-        <link rel="shortcut icon" href="../imgs_vids/Shortcut_iconJPG.JPG">
+        <title>Github Profile | Emlyn Joseph</title>
+        <link rel="shortcut icon" href="imgs_vids/Shortcut_iconJPG.JPG">
 
-        <style>
+       <style>
 * {
     margin: 0;
     padding: 0;
@@ -19,7 +19,7 @@ body {
     */
 }
 
-/* Lines 23 to 59 are from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader5 for CSS preloading animation. The code was modified to suit this website. */
+/* Lines 23 to 70 are from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader5 for CSS preloading animation. The code was modified to suit this website. */
 #loader {
   position: absolute;
   left: 50%;
@@ -58,6 +58,9 @@ body {
   to{ bottom:0; opacity:1 }
 }
 
+hr {
+    margin-top: 2rem;
+}
 .navbar {
     background-color: black;
     width: 100%;
@@ -86,7 +89,7 @@ body {
     transition: all 0.5s ease-in;
 }
 .navbar ul li a:hover {
-    color: rgb(0, 0, 88);
+    color: black;
     box-shadow: 0 0 0.7rem white;
     background-color: white;
 }
@@ -97,40 +100,48 @@ body {
     text-align: center;
     margin-top: 3.125rem;
     color: black;
-    font-size: 3rem;
-}
-#img {
-    width: 3.6rem;
-    height: 3.8rem;
+    font-size: 3.5rem;
 }
 
-#content {
-    text-align: center;
-    margin: 2rem 2rem;
+.links ul {
+    display: flex;
+    list-style: none;
+    margin-bottom: 4.5rem;
+    margin-top: 2rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
-#content #link {
+.links ul li {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 1.3rem;
     font-weight: bold;
+}
+.links ul li a {
     color: rgb(0, 0, 88);
     text-decoration: none;
     padding: 1rem 1.5rem;
-    margin-top: 10rem;
+    margin: 1rem;
     transition: all 0.15s ease-in;
     border: 0.2rem solid rgb(0, 0, 88);
     border-radius: 1rem;
 }
-#content #link:hover {
+.links ul li a:hover {
     color: rgb(255, 245, 230);
     box-shadow: 0 0 0.7rem rgb(0, 0, 88);
     background-color: rgb(0, 0, 88);
 }
-#content p {
-    font-style: italic;
+#info {
+    text-align: center;
+    margin: -2rem 2rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 1.1rem;
-    margin: 2rem 0;
-    color: rgb(88, 87, 87);
-    text-align: left;
+    color: rgb(0, 0, 88);
+    margin-bottom: 3rem;
+}
+#img {
+    width: 3.6rem;
+    height: 3.8rem;
 }
 
 @media only screen and (min-width: 1600px) {
@@ -143,6 +154,9 @@ body {
     }
     #name {
         font-size: 4.3rem;
+    }
+    .links ul li {
+        font-size: 2.9rem;
     }
 }
 @media only screen and (max-width: 660px) {
@@ -167,25 +181,27 @@ body {
         <div style="display:none;" id="myDiv" class="animate-bottom">
             <header class="navbar">
                 <ul class="list">
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="../about.html">About</a></li>
-                    <li><a href="../coding.html">Projects</a></li>
-                    <a href="../index.html"><img id="img" src="../imgs_vids/Shortcut_iconJPG.JPG"></a>
-                    <li><a href="../github.html">Github</a></li>
-                    <li><a href="../youtube.html">YouTube</a></li>
-                    <li><a href="../skills.html">Skills</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="coding.html">Projects</a></li>
+                    <a href="index.html"><img id="img" src="imgs_vids/Shortcut_iconJPG.JPG"></a>
+                    <li><a href="github.html">Github</a></li>
+                    <li><a href="youtube.html">YouTube</a></li>
+                    <li><a href="skills.html">Skills</a></li>
                 </ul>
             </header>
 
-            <h1 id="name">Jamming (Spotify App) </h1>
-            <div id="content">
-                <a id="link" target="_blank" href="https://emlyn-reactapp-jamming.netlify.app">Web App</a>
-                <p>This was a large project made using many languages and libraries. This is one of the projects that I had to create from scratch, which was from the Full-Stack-Engineer Path in Codecademy. The key concepts used to create this web app were React components, passing the state from one component to another, and requests with the Spotify API in order allow users to search the Spotify library, create a custom playlist, and then save it to their Spotify account, all through this website.<br> When building this web app, I organized the code into several folders. Each one has a React Component, which serves it own purpose, and a CSS file to style it. For example, one component is the search bar, which I linked to the Spotify search. These components are all connected and rendered through the main file. <br>I built most of the project on my own in my local environment, but I struggled in the last part when creating requests and fetching data through the Spotify API and manipulating it to return songs, artists, or albums in an organized format. For this part, I used videos and tutorials from Codecademy. Also, throughout the project, I used many resources online such as documentation and Stack Overflow to understand why something in my code did not happen the way it was supposed to, and to find answers to errors. <br> This web app was deployed through Netlify. <span style="font-weight: bold; font-style: normal; text-transform: uppercase; text-decoration: underline;">Click the "Web App" link below the title to view the app.</span></p>
-            </div>
+            <h1 id="name">Github Profile</h1>
+            <nav class="links">
+                <ul>
+                    <li><a target="_blank"href="https://github.com/EmlynJoseph">My Profile</a></li>
+                </ul>
+            </nav>
+            <p id="info">Click the link above to view my Github profile, which contains code repositories for several of my projects.</p>
         </div>
 
         <script>
-            /* Lines 189 to 195 are from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader5 */
+            /* Lines 314 to 320 are from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader5 */
             function myFunction() {
               myVar = setTimeout(showPage, 250);
             }
@@ -194,6 +210,6 @@ body {
               document.getElementById("myDiv").style.display = "block";
             }
         </script>
-
     </body>
 </html>
+

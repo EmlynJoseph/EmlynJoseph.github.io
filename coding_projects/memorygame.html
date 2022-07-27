@@ -18,6 +18,46 @@ body {
     background-image: linear-gradient(to right, white, rgb(204, 202, 202), rgb(26, 25, 25));
     */
 }
+
+/* Lines 23 to 59 are from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader5 for CSS preloading animation. The code was modified to suit this website. */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 5rem;
+  height: 5rem;
+  margin: -3.5rem 0 0 -3rem;
+  border: 0.75rem solid rgb(0, 0, 88);
+  border-radius: 50%;
+  border-top: 0.75rem solid skyblue;
+  -webkit-animation: spin 1.25s linear infinite;
+  animation: spin 1.25s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 }
+  to { bottom:0px; opacity:1 }
+}
+@keyframes animatebottom {
+  from{ bottom:-100px; opacity:0 }
+  to{ bottom:0; opacity:1 }
+}
+
 .navbar {
     background-color: black;
     width: 100%;
@@ -60,11 +100,8 @@ body {
     font-size: 3rem;
 }
 #img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 7.8rem;
-    height: 5.2rem;
+    width: 3.6rem;
+    height: 3.8rem;
 }
 
 #content {
@@ -128,22 +165,39 @@ body {
 
         </style>
     </head>
-    <body>
-        <header class="navbar">
-            <ul class="list">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../about.html">About</a></li>
-                <li><a href="../coding.html">Projects</a></li>
-                <li><a href="../youtube.html">YouTube</a></li>
-                <li><a href="../skills.html">Skills</a></li>
-                <a href="../index.html"><img id="img" src="../imgs_vids/LogoJPG.JPG"></a>
-            </ul>
-        </header>
+    <body onload="myFunction()">
+        <div id="loader"></div>
 
-        <h1 id="name">Matching Memory Game</h1>
-        <div id="content">
-            <a id="link" target="_blank" href="https://emlyn-reactredux-app-matching-memory-game.netlify.app/">Web App</a>
-            <p>This is a project from the Full-Stack-Engineer Path in Codecademy after the React Redux Library lesson. <br><a target="_blank" href="https://react-redux.js.org/">React-Redux</a> is the official Redux-UI (User Interface) binding package for React. This project uses React for the UI rendering and Redux for the state management. Both these libraries are interconnected and work really well with each other. <br>I had to complete this project by primarily adding a <Provider /> component, implement selectors, retrieve data from the Redux store and subscribe the components to changes within the selected pieces, all using useSelector(), and dispatch actions with the help of useDispatch(). I also implemented some extra features to make the overall user experience a lot better such as clicking on a new card to reset the unmatched cards instead of clicking the button at the bottom, and rendering the text to red if the two cards do not match. <br>This app is a memory game. It contains 12 cards in a  randomized order, which are flipped over. You can press two cards and if they match, they will turn green and the score will update. The goal is to match all of the cards. <br>This web app was deployed through Netlify. <span style="font-weight: bold; font-style: normal; text-transform: uppercase; text-decoration: underline;">Click the "Web App" link below the title to view the app.</span></p>
+        <div style="display:none;" id="myDiv" class="animate-bottom">
+            <header class="navbar">
+                <ul class="list">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../coding.html">Projects</a></li>
+                    <a href="../index.html"><img id="img" src="../imgs_vids/Shortcut_iconJPG.JPG"></a>
+                    <li><a href="../github.html">Github</a></li>
+                    <li><a href="../youtube.html">YouTube</a></li>
+                    <li><a href="../skills.html">Skills</a></li>
+                </ul>
+            </header>
+
+            <h1 id="name">Matching Memory Game</h1>
+            <div id="content">
+                <a id="link" target="_blank" href="https://emlyn-reactredux-app-matching-memory-game.netlify.app/">Web App</a>
+                <p>This is a project from the Full-Stack-Engineer Path in Codecademy after the React Redux Library lesson. <br><a target="_blank" href="https://react-redux.js.org/">React-Redux</a> is the official Redux-UI (User Interface) binding package for React. This project uses React for the UI rendering and Redux for the state management. Both these libraries are interconnected and work really well with each other. <br>I had to complete this project by primarily adding a <Provider /> component, implement selectors, retrieve data from the Redux store and subscribe the components to changes within the selected pieces, all using useSelector(), and dispatch actions with the help of useDispatch(). I also implemented some extra features to make the overall user experience a lot better such as clicking on a new card to reset the unmatched cards instead of clicking the button at the bottom, and rendering the text to red if the two cards do not match. <br>This app is a memory game. It contains 12 cards in a  randomized order, which are flipped over. You can press two cards and if they match, they will turn green and the score will update. The goal is to match all of the cards. <br>This web app was deployed through Netlify. <span style="font-weight: bold; font-style: normal; text-transform: uppercase; text-decoration: underline;">Click the "Web App" link below the title to view the app.</span></p>
+            </div>
         </div>
+
+        <script>
+            /* Lines 193 to 199 are from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader5 */
+            function myFunction() {
+              myVar = setTimeout(showPage, 250);
+            }
+            function showPage() {
+              document.getElementById("loader").style.display = "none";
+              document.getElementById("myDiv").style.display = "block";
+            }
+        </script>
+
     </body>
 </html>

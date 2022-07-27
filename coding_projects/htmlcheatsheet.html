@@ -19,6 +19,46 @@ body {
     background-image: linear-gradient(to right, white, rgb(204, 202, 202), rgb(26, 25, 25));
   */
 }
+
+/* Lines 24 to 60 are from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader5 for CSS preloading animation. The code was modified to suit this website. */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 5rem;
+  height: 5rem;
+  margin: -3.5rem 0 0 -3rem;
+  border: 0.75rem solid rgb(0, 0, 88);
+  border-radius: 50%;
+  border-top: 0.75rem solid skyblue;
+  -webkit-animation: spin 1.25s linear infinite;
+  animation: spin 1.25s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 }
+  to { bottom:0px; opacity:1 }
+}
+@keyframes animatebottom {
+  from{ bottom:-100px; opacity:0 }
+  to{ bottom:0; opacity:1 }
+}
+
 .navbar {
     background-color: black;
     width: 100%;
@@ -61,11 +101,8 @@ body {
     font-size: 3rem;
 }
 #img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 7.8rem;
-    height: 5.2rem;
+    width: 3.6rem;
+    height: 3.8rem;
 }
 
 #heading {
@@ -138,207 +175,224 @@ td {
 
         </style>
     </head>
-    <body>
-        <header class="navbar">
-            <ul class="list">
-              <a href="../index.html"><img id="img" src="../imgs_vids/LogoJPG.JPG"></a>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../about.html">About</a></li>
-                <li><a href="../coding.html">Projects</a></li>
-                <li><a href="../youtube.html">YouTube</a></li>
-                <li><a href="../skills.html">Skills</a></li>
-            </ul>
-        </header>
+    <body onload="myFunction()">
+        <div id="loader"></div>
 
-        <h1 id="name">HTML Cheatsheet</h1>
+        <div style="display:none;" id="myDiv" class="animate-bottom">
+          <header class="navbar">
+              <ul class="list">
+                  <li><a href="../index.html">Home</a></li>
+                  <li><a href="../about.html">About</a></li>
+                  <li><a href="../coding.html">Projects</a></li>
+                  <a href="../index.html"><img id="img" src="../imgs_vids/Shortcut_iconJPG.JPG"></a>
+                    <li><a href="../github.html">Github</a></li>
+                  <li><a href="../youtube.html">YouTube</a></li>
+                  <li><a href="../skills.html">Skills</a></li>
+              </ul>
+          </header>
 
-        <h2 id="heading">Common HTML Tags</h2>
-        <table>
-          <thead>
-            <th>Tag</th>
-            <th>Name</th>
-            <th>Description</th>
-          </thead>
-          <tbody>
-            <tr>
-              <td><span class="code">&lt;!--</span></td>
-              <td>Comment</td>
-              <td>Defines a comment.</td>
-            </tr>
-            <tr>
-              <td><span class="code">&lt;DOCTYPE html&gt;</span></td>
-              <td>Document Type</td>
-              <td>The first line of a HTML document that defines the document type.</td>
-            </tr>
-            <tr>
-              <td><span class="code">&lt;html&gt;</span></td>
-              <td>Html</td>
-              <td>Defines an HTML document and contains all the content.</td>
-            </tr>
-            <tr>
-              <td><span class="code">&lt;head&gt;</span></td>
-              <td>Head</td>
-              <td>Defines the head portion and contains the metadata.</td>
-            </tr>
-            <tr>
-              <td><span class="code">&lt;meta&gt;</span></td>
-              <td>Meta</td>
-              <td>Defines the metadata.</td>
-            </tr>
-            <tr>
-              <td><span class="code">&lt;title&gt;</span></td>
-              <td>Title</td>
-              <td>Defines the title which is shown on the page's tab.</td>
-            </tr>
-            <tr>
-              <td><span class="code">&lt;body&gt;</span></td>
-              <td>Body</td>
-              <td>Contains the content that is displayed in the browser.</td>
-            </tr>
-            <tr>
-              <td><span class="code">&lt;link&gt;</span></td>
-              <td>Link</td>
-              <td>Defines a link to an external document and the path of the url can be added using the "href" attribute.</td>
-            </tr>
-            <tr>
-              <td><span class="code">&lt;a&gt;</span></td>
-              <td>Anchor</td>
-              <td>Defines a hyperlink with a url that can be added using the "href" attribute.</td>
-            </tr>
-            <tr>
-              <td><span class="code">&lt;h1&gt;</span></td>
-              <td>Heading 1</td>
-              <td>Defines a 1st level heading that contains the most important or main information.</td>
-            </tr>
-            <tr>
-              <td><span class="code">&lt;h2&gt;</span></td>
-              <td>Heading 2</td>
-              <td>Defines a 2nd level heading that contains the second most important information.</td>
-            </tr>
-            <tr>
-              <td><span class="code">&lt;h3&gt;</span></td>
-              <td>Heading 3</td>
-              <td>Defines a 3rd level heading that contains the third most important information.</td>
-            </tr>
-            <tr>
-              <td><span class="code">&lt;h4&gt;</span></td>
-              <td>Heading 4</td>
-              <td>Defines a 4th level heading that contains the fourth most important information.</td>
-            </tr>
-            <tr>
-              <td><span class="code">&lt;h5&gt;</span></td>
-              <td>Heading 5</td>
-              <td>Defines a 5th level heading that contains the fifth most important information.</td>
-            </tr>
-            <tr>
-              <td><span class="code">&lt;h6&gt;</span></td>
-              <td>Heading 6</td>
-              <td>Defines a 6th level heading that contains the least important information.</td>
-            </tr>
-            <tr>
-              <td><span class="code">&lt;p&gt;</span></td>
-              <td>Paragraph</td>
-              <td>Defines a paragraph.</td>
-            </tr>
-            <tr>
-              <td><span class="code">&lt;br&gt;</span></td>
-              <td>Line break</td>
-              <td>Adds a line break.</td>
-            </tr>
-            <tr>
-              <td><span class="code">&lt;ul&gt;</span></td>
-              <td>Unordered List</td>
-              <td>Defines an unordered list.</td>
-            </tr>
-            <tr>
-              <td><span class="code">&lt;ol&gt;</span></td>
-              <td>Ordered List</td>
-              <td>Defines an ordered list.</td>
-            </tr>
-            <tr>
-              <td><span class="code">&lt;li&gt;</span></td>
-              <td>List item</td>
-              <td>Defines a list item inside a &lt;ul&gt; or &lt;ol&gt; that defaults to bullet points for an unordered list and numbers for an ordered list.</td>
-            </tr>
-            
-            <tr>
-              <td><span class="code">&lt;em&gt;</span></td>
-              <td>Emphasis</td>
-              <td>Emphasizes text in italics, similar to the &lt;i&gt; tag.</td>
-            </tr>
-            <tr>
-              <td><span class="code">&lt;i&gt;</span></td>
-              <td>Italic</td>
-              <td>Defines text in italics.</td>
-            </tr>
-            <tr>
-              <td><span class="code">&lt;strong&gt;</span></td>
-              <td>Strong emphasis</td>
-              <td>Defines text with strong emphasis displayed in bold.</td>
-            </tr>
-            <tr>
-              <td><span class="code">&lt;img&gt;</span></td>
-              <td>Image</td>
-              <td>Defines text with strong emphasis displayed in bold.</td>
-            </tr>
-            <tr>
-              <td><span class="code">&lt;video&gt;</span></td>
-              <td>Video</td>
-              <td>Defines text with strong emphasis displayed in bold.</td>
-            </tr>
-            <tr>
-              <td><span class="code">&lt;button&gt;</span></td>
-              <td>Button</td>
-              <td>Creates a clickable button.</td>
-            </tr>
-            <tr>
-              <td><span class="code">&lt;form&gt;</span></td>
-              <td>Form</td>
-              <td>Creates a form for the user.</td>
-            </tr>
-            <tr>
-              <td><span class="code">&lt;input&gt;</span></td>
-              <td>Input</td>
-              <td>Creates a field for user input, usually inside a form.</td>
-            </tr>
-            <tr>
-            <tr>
-              <td><span class="code">&lt;table&gt;</span></td>
-              <td>Table</td>
-              <td>The wrapper element for all HTML tables.</td>
-            </tr>
-            <tr>
-              <td><span class="code">&lt;thead&gt;</span></td>
-              <td>Table Head</td>
-              <td>The set of rows defining the column headers in a table.</td>
-            </tr>
-            <tr>
-              <td><span class="code">&lt;th&gt;</span></td>
-              <td>Table Header</td>
-              <td>Creates a header cell at the top of a table.</td>
-            </tr>
-            <tr>
-              <td><span class="code">&lt;tbody&gt;</span></td>
-              <td>Table Body</td>
-              <td>The set of rows containing actual table data.</td>
-            </tr>
-            <tr>
-              <td><span class="code">&lt;tr&gt;</span></td>
-              <td>Table Row</td>
-              <td>The table row container.</td>
-            </tr>
-            <tr>
-              <td><span class="code">&lt;td&gt;</span></td>
-              <td>Table Data</td>
-              <td>The table data container.</td>
-            </tr>
-            <tr>
-              <td><span class="code">&lt;tfoot&gt;</span></td>
-              <td>Table Foot</td>
-              <td>The set of rows defining the footer in a table.</td>
-            </tr>
-          </tbody>
-        </table>
+          <h1 id="name">HTML Cheatsheet</h1>
+
+          <h2 id="heading">Common HTML Tags</h2>
+          <table>
+            <thead>
+              <th>Tag</th>
+              <th>Name</th>
+              <th>Description</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="code">&lt;!--</span></td>
+                <td>Comment</td>
+                <td>Defines a comment.</td>
+              </tr>
+              <tr>
+                <td><span class="code">&lt;DOCTYPE html&gt;</span></td>
+                <td>Document Type</td>
+                <td>The first line of a HTML document that defines the document type.</td>
+              </tr>
+              <tr>
+                <td><span class="code">&lt;html&gt;</span></td>
+                <td>Html</td>
+                <td>Defines an HTML document and contains all the content.</td>
+              </tr>
+              <tr>
+                <td><span class="code">&lt;head&gt;</span></td>
+                <td>Head</td>
+                <td>Defines the head portion and contains the metadata.</td>
+              </tr>
+              <tr>
+                <td><span class="code">&lt;meta&gt;</span></td>
+                <td>Meta</td>
+                <td>Defines the metadata.</td>
+              </tr>
+              <tr>
+                <td><span class="code">&lt;title&gt;</span></td>
+                <td>Title</td>
+                <td>Defines the title which is shown on the page's tab.</td>
+              </tr>
+              <tr>
+                <td><span class="code">&lt;body&gt;</span></td>
+                <td>Body</td>
+                <td>Contains the content that is displayed in the browser.</td>
+              </tr>
+              <tr>
+                <td><span class="code">&lt;link&gt;</span></td>
+                <td>Link</td>
+                <td>Defines a link to an external document and the path of the url can be added using the "href" attribute.</td>
+              </tr>
+              <tr>
+                <td><span class="code">&lt;a&gt;</span></td>
+                <td>Anchor</td>
+                <td>Defines a hyperlink with a url that can be added using the "href" attribute.</td>
+              </tr>
+              <tr>
+                <td><span class="code">&lt;h1&gt;</span></td>
+                <td>Heading 1</td>
+                <td>Defines a 1st level heading that contains the most important or main information.</td>
+              </tr>
+              <tr>
+                <td><span class="code">&lt;h2&gt;</span></td>
+                <td>Heading 2</td>
+                <td>Defines a 2nd level heading that contains the second most important information.</td>
+              </tr>
+              <tr>
+                <td><span class="code">&lt;h3&gt;</span></td>
+                <td>Heading 3</td>
+                <td>Defines a 3rd level heading that contains the third most important information.</td>
+              </tr>
+              <tr>
+                <td><span class="code">&lt;h4&gt;</span></td>
+                <td>Heading 4</td>
+                <td>Defines a 4th level heading that contains the fourth most important information.</td>
+              </tr>
+              <tr>
+                <td><span class="code">&lt;h5&gt;</span></td>
+                <td>Heading 5</td>
+                <td>Defines a 5th level heading that contains the fifth most important information.</td>
+              </tr>
+              <tr>
+                <td><span class="code">&lt;h6&gt;</span></td>
+                <td>Heading 6</td>
+                <td>Defines a 6th level heading that contains the least important information.</td>
+              </tr>
+              <tr>
+                <td><span class="code">&lt;p&gt;</span></td>
+                <td>Paragraph</td>
+                <td>Defines a paragraph.</td>
+              </tr>
+              <tr>
+                <td><span class="code">&lt;br&gt;</span></td>
+                <td>Line break</td>
+                <td>Adds a line break.</td>
+              </tr>
+              <tr>
+                <td><span class="code">&lt;ul&gt;</span></td>
+                <td>Unordered List</td>
+                <td>Defines an unordered list.</td>
+              </tr>
+              <tr>
+                <td><span class="code">&lt;ol&gt;</span></td>
+                <td>Ordered List</td>
+                <td>Defines an ordered list.</td>
+              </tr>
+              <tr>
+                <td><span class="code">&lt;li&gt;</span></td>
+                <td>List item</td>
+                <td>Defines a list item inside a &lt;ul&gt; or &lt;ol&gt; that defaults to bullet points for an unordered list and numbers for an ordered list.</td>
+              </tr>
+
+              <tr>
+                <td><span class="code">&lt;em&gt;</span></td>
+                <td>Emphasis</td>
+                <td>Emphasizes text in italics, similar to the &lt;i&gt; tag.</td>
+              </tr>
+              <tr>
+                <td><span class="code">&lt;i&gt;</span></td>
+                <td>Italic</td>
+                <td>Defines text in italics.</td>
+              </tr>
+              <tr>
+                <td><span class="code">&lt;strong&gt;</span></td>
+                <td>Strong emphasis</td>
+                <td>Defines text with strong emphasis displayed in bold.</td>
+              </tr>
+              <tr>
+                <td><span class="code">&lt;img&gt;</span></td>
+                <td>Image</td>
+                <td>Defines text with strong emphasis displayed in bold.</td>
+              </tr>
+              <tr>
+                <td><span class="code">&lt;video&gt;</span></td>
+                <td>Video</td>
+                <td>Defines text with strong emphasis displayed in bold.</td>
+              </tr>
+              <tr>
+                <td><span class="code">&lt;button&gt;</span></td>
+                <td>Button</td>
+                <td>Creates a clickable button.</td>
+              </tr>
+              <tr>
+                <td><span class="code">&lt;form&gt;</span></td>
+                <td>Form</td>
+                <td>Creates a form for the user.</td>
+              </tr>
+              <tr>
+                <td><span class="code">&lt;input&gt;</span></td>
+                <td>Input</td>
+                <td>Creates a field for user input, usually inside a form.</td>
+              </tr>
+              <tr>
+              <tr>
+                <td><span class="code">&lt;table&gt;</span></td>
+                <td>Table</td>
+                <td>The wrapper element for all HTML tables.</td>
+              </tr>
+              <tr>
+                <td><span class="code">&lt;thead&gt;</span></td>
+                <td>Table Head</td>
+                <td>The set of rows defining the column headers in a table.</td>
+              </tr>
+              <tr>
+                <td><span class="code">&lt;th&gt;</span></td>
+                <td>Table Header</td>
+                <td>Creates a header cell at the top of a table.</td>
+              </tr>
+              <tr>
+                <td><span class="code">&lt;tbody&gt;</span></td>
+                <td>Table Body</td>
+                <td>The set of rows containing actual table data.</td>
+              </tr>
+              <tr>
+                <td><span class="code">&lt;tr&gt;</span></td>
+                <td>Table Row</td>
+                <td>The table row container.</td>
+              </tr>
+              <tr>
+                <td><span class="code">&lt;td&gt;</span></td>
+                <td>Table Data</td>
+                <td>The table data container.</td>
+              </tr>
+              <tr>
+                <td><span class="code">&lt;tfoot&gt;</span></td>
+                <td>Table Foot</td>
+                <td>The set of rows defining the footer in a table.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <script>
+            /* Lines 387 to 393 are from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader5 */
+            function myFunction() {
+              myVar = setTimeout(showPage, 250);
+            }
+            function showPage() {
+              document.getElementById("loader").style.display = "none";
+              document.getElementById("myDiv").style.display = "block";
+            }
+        </script>
+
     </body>
 </html>
 

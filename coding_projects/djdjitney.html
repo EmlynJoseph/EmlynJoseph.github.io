@@ -18,6 +18,46 @@ body {
     background-image: linear-gradient(to right, white, rgb(204, 202, 202), rgb(26, 25, 25));
     */
 }
+
+/* Lines 23 to 59 are from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader5 for CSS preloading animation. The code was modified to suit this website. */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 5rem;
+  height: 5rem;
+  margin: -3.5rem 0 0 -3rem;
+  border: 0.75rem solid rgb(0, 0, 88);
+  border-radius: 50%;
+  border-top: 0.75rem solid skyblue;
+  -webkit-animation: spin 1.25s linear infinite;
+  animation: spin 1.25s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 }
+  to { bottom:0px; opacity:1 }
+}
+@keyframes animatebottom {
+  from{ bottom:-100px; opacity:0 }
+  to{ bottom:0; opacity:1 }
+}
+
 .navbar {
     background-color: black;
     width: 100%;
@@ -60,11 +100,8 @@ body {
     font-size: 3rem;
 }
 #img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 7.8rem;
-    height: 5.2rem;
+    width: 3.6rem;
+    height: 3.8rem;
 }
 
 #content {
@@ -124,22 +161,39 @@ body {
 
         </style>
     </head>
-    <body>
-        <header class="navbar">
-            <ul class="list">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../about.html">About</a></li>
-                <li><a href="../coding.html">Projects</a></li>
-                <li><a href="../youtube.html">YouTube</a></li>
-                <li><a href="../skills.html">Skills</a></li>
-                <a href="../index.html"><img id="img" src="../imgs_vids/LogoJPG.JPG"></a>
-            </ul>
-        </header>
+    <body onload="myFunction()">
+        <div id="loader"></div>
 
-        <h1 id="name">The Django Djitney</h1>
-        <div id="content">
-            <a id="link" target="_blank" href="https://emlyn2.pythonanywhere.com/">Web App</a></h2>
-            <p>This is one of the projects in the Build Python Web Apps with Django Skill Path in Codecademy. <br>Most of the code was already written and my tasks were to basically make views for the web app with view, update, edit, and delete functionality. I had to then link these views to the templates in order for it to render in the main page. <br>According to the official Django documentation, "A view function, or view for short, is a Python function that takes a web request and returns a web response." The purpose for setting up views in templates is to make the rendered data much more dynamic and to give users a very customized and engaging experience. <br>This main task for this project is to create an easy to use web app for a transportation department to view all the train routes throughout all the stations, and to update or delete them if needed. <br>This app was deployed through PythonAnywhere.<span style="font-weight: bold; font-style: normal; text-transform: uppercase; text-decoration: underline;">Click the "Web App" link below the title to view the app.</span> </p>
+        <div style="display:none;" id="myDiv" class="animate-bottom">
+            <header class="navbar">
+                <ul class="list">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../coding.html">Projects</a></li>
+                    <a href="../index.html"><img id="img" src="../imgs_vids/Shortcut_iconJPG.JPG"></a>
+                    <li><a href="../github.html">Github</a></li>
+                    <li><a href="../youtube.html">YouTube</a></li>
+                    <li><a href="../skills.html">Skills</a></li>
+                </ul>
+            </header>
+
+            <h1 id="name">The Django Djitney</h1>
+            <div id="content">
+                <a id="link" target="_blank" href="https://emlyn2.pythonanywhere.com/">Web App</a></h2>
+                <p>This is one of the projects in the Build Python Web Apps with Django Skill Path in Codecademy. <br>Most of the code was already written and my tasks were to basically make views for the web app with view, update, edit, and delete functionality. I had to then link these views to the templates in order for it to render in the main page. <br>According to the official Django documentation, "A view function, or view for short, is a Python function that takes a web request and returns a web response." The purpose for setting up views in templates is to make the rendered data much more dynamic and to give users a very customized and engaging experience. <br>This main task for this project is to create an easy to use web app for a transportation department to view all the train routes throughout all the stations, and to update or delete them if needed. <br>This app was deployed through PythonAnywhere.<span style="font-weight: bold; font-style: normal; text-transform: uppercase; text-decoration: underline;">Click the "Web App" link below the title to view the app.</span> </p>
+            </div>
         </div>
+
+        <script>
+            /* Lines 189 to 195 are from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader5 */
+            function myFunction() {
+              myVar = setTimeout(showPage, 250);
+            }
+            function showPage() {
+              document.getElementById("loader").style.display = "none";
+              document.getElementById("myDiv").style.display = "block";
+            }
+        </script>
+
     </body>
 </html>

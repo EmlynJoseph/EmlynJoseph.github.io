@@ -19,7 +19,7 @@ body {
     */
 }
 
-/* Lines 23 to 59 is from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader5 for CSS preloading animation. The code was modified to suit this website. */
+/* Lines 23 to 59 are from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader5 for CSS preloading animation. The code was modified to suit this website. */
 #loader {
   position: absolute;
   left: 50%;
@@ -28,9 +28,9 @@ body {
   width: 5rem;
   height: 5rem;
   margin: -3.5rem 0 0 -3rem;
-  border: 0.75rem solid black;
+  border: 0.75rem solid rgb(0, 0, 88);
   border-radius: 50%;
-  border-top: 0.75rem solid steelblue;
+  border-top: 0.75rem solid skyblue;
   -webkit-animation: spin 1.25s linear infinite;
   animation: spin 1.25s linear infinite;
 }
@@ -95,12 +95,13 @@ header {
     text-align: center;
     background: url('https://t3.ftcdn.net/jpg/02/33/46/38/360_F_233463830_4PXmMgunvII7zRGW8tSX2lo4kFewkqke.jpg');
     -webkit-background-size: cover;
+    height: 100vh;
 }
 #greeting {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 1.8rem;
+    font-size: 2rem;
     margin-top: 1rem;
-    color: steelblue;
+    color: white;
 }
 
 /* Lines 120 to 132 were from https://thoughtbot.com/blog/css-animation-for-beginners */
@@ -120,7 +121,7 @@ header {
 
 #name {
     font-weight: 400;
-    font-size: 3.5rem;
+    font-size: 4rem;
     margin: 2.125rem 0;
     color: rgb(255, 245, 230);
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -129,31 +130,59 @@ header {
 }
 
 #typing {
-    color: gold;
+    color: white;
     border-radius: 1rem;
     padding: 1rem;
-    font-family: "Courier New", "Courier", monospace, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 1.5rem;
+    margin-bottom: 6rem;
+    font-weight: 100;
 }
-#header-logo-container img {
-    width: 3rem;
+
+#contact-button {
+    border: 0.2rem solid skyblue;
+    color: skyblue;
+    padding: 1.2rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    transition: all 0.5s ease-in;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+#contact-button:hover {
+    color: black;
+    transition: all 0.5s ease-in;
+    background-color: skyblue;
+    box-shadow: 0 0 0.7rem skyblue;
+}
+
+/*
+#footer-logo-container img {
+    width: 4.2rem;
     height: auto;
-    border-radius: 50%;
     margin: 1rem 0 -2rem 0;
     transition: all 0.2s ease-in;
     padding: 0.5rem;
 }
-#header-logo-container img:hover {
-    width: 3.75rem;
+#footer-logo-container #email-logo {
+    width: 3.1rem;
+    margin-bottom: -1.6rem;
+    border-radius: 50%;
+    background: white;
+}
+#footer-logo-container #email-logo:hover {
+    width: 3.5rem;
     transition: all 0.2s ease-in;
 }
+#footer-logo-container img:hover {
+    width: 4.5rem;
+    transition: all 0.2s ease-in;
+}
+*/
 
 #img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 7.8rem;
-    height: 5.2rem;
+    width: 3.6rem;
+    height: 3.8rem;
 }
 
 #section3 .heading {
@@ -191,17 +220,16 @@ header {
     margin: 1rem 0.1rem 0;
     height: 5.6rem;
     width: auto;
-    background-color: lightgray;
+    background-color: skyblue;
     padding: 1rem;
     border-radius: 5rem;
     border: 0.2rem solid rgb(255, 245, 230);
     transition: all 0.25s ease-in;
 }
 #section3 .contact-fig img:hover {
-    background-color: rgb(255, 245, 230);
-    cursor: pointer;
-    transition: all 0.25s ease-in;
+    background-color: steelblue;
 }
+
 #section3 .contact-fig figcaption {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin-bottom: 1.5rem;
@@ -244,38 +272,36 @@ header {
         <div style="display:none;" id="myDiv" class="animate-bottom">
             <nav class="navbar">
                 <ul class="list">
-                    <a href="index.html"><img id="img" src="imgs_vids/LogoJPG.JPG"></a>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="coding.html">Projects</a></li>
+                    <a href="index.html"><img id="img" src="imgs_vids/Shortcut_iconJPG.JPG"></a>
+                    <li><a href="github.html">Github</a></li>
                     <li><a href="youtube.html">YouTube</a></li>
                     <li><a href="skills.html">Skills</a></li>
                 </ul>
             </nav>
             <header>
-                <h2 id="greeting">Hello, my name is</h2>
-                <h1 id="name">Emlyn Joseph</h1>
+                <h2 id="greeting">Hello! My name is</h2>
+                <h1 id="name">Emlyn Joseph.</h1>
                 <div id="typing">
                     <h3><span>8th Grader</span></h3>
                 </div>
-
-                <div id="header-logo-container">
-                    <a href="https://github.com/EmlynJoseph" target="_blank"><img src="https://pnggrid.com/wp-content/uploads/2022/03/Github-Logo-White.png" alt="github logo"></a>
-                </div>
+                <a href="#section3" id="contact-button">Contact me!</a>
             </header>
 
             <section id="section3">
-                <h2 class="heading">Contact Me</h2>
+                <h2 class="heading">Contact</h2>
 
                 <section id="figure-container">
                     <figure class="contact-fig">
-                        <img src="https://askbenhandyman.co.uk/wp-content/uploads/2016/04/e-mail-symbol.png" alt="gmail logo">
+                        <a href="mailto:emlynjoe@gmail.com"><img src="https://askbenhandyman.co.uk/wp-content/uploads/2016/04/e-mail-symbol.png" alt="email logo"></a>
                         <figcaption>Email</figcaption>
                         <figcaption>emlynjoe@gmail.com</figcaption>
                     </figure>
 
                     <figure class="contact-fig">
-                        <img src="https://www.freeiconspng.com/uploads/discord-black-icon-1.png" alt="discord logo">
+                        <a href=""><img src="https://www.freeiconspng.com/uploads/discord-black-icon-1.png" alt="discord logo"></a>
                         <figcaption>Discord</figcaption>
                         <figcaption>Emlyn Joseph#0947</figcaption>
                     </figure>
@@ -283,9 +309,15 @@ header {
             </section>
         </div>
 
+<!--        <footer>-->
+<!--            <div id="footer-logo-container">-->
+<!--                <a href="https://github.com/EmlynJoseph" target="_blank"><img src="https://pnggrid.com/wp-content/uploads/2022/03/Github-Logo-White.png" alt="github logo"></a>-->
+<!--                <a href="mailto:emlynjoe@gmail.com"><img id="email-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Aiga_mail.svg/1024px-Aiga_mail.svg.png" alt="email logo"></a>-->
+<!--            </div>-->
+<!--        </footer>-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" referrerpolicy="no-referrer"></script>
         <script>
-            /* Lines 272 to 278 are from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader5 */
+            /* Lines 318 to 324 are from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_loader5 */
             function myFunction() {
               myVar = setTimeout(showPage, 250);
             }
